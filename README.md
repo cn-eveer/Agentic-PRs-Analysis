@@ -32,6 +32,33 @@ Contains **analysis scripts and Jupyter notebooks** used to reproduce the empiri
 
 Scripts load large-scale pull request data (locally or via Hugging Face), apply paper-aligned filtering rules (e.g., star threshold, closed PRs, bot filtering), and compute statistics such as merged vs. rejected PRs by agent.
 
+#### Sampling Script (Table-1–Aligned)
+
+This script reproduces the **Table 1 filtering logic** from the paper and generates datasets for **manual review** and **inter-rater agreement**.
+
+**What the script does:**
+1. Loads large-scale GitHub PR data (locally or via Hugging Face).
+2. Applies paper-aligned filters:
+   - repositories with ≥ 500 stars,
+   - closed pull requests only,
+   - excludes bot-authored PRs with no human comments.
+3. Labels remaining PRs as:
+   - **accepted** (merged),
+   - **rejected** (not merged).
+4. Recomputes **Table 1** (merged vs. rejected counts per agent).
+5. Uses the Table 1 totals to create **stratified samples by agent** for:
+   - inter-rater agreement checks, and
+   - manual inspection.
+
+**Outputs (CSV files):**
+- `sample_check_rejected.csv` – rejected PRs for agreement validation
+- `sample_check_accepts.csv` – accepted PRs for agreement validation
+- `manual_check_rejected.csv` – rejected PRs for manual analysis
+- `manual_check_accepted.csv` – accepted PRs for manual analysis
+
+All sampling is reproducible and stratified by agent, ensuring consistency with the paper’s reported statistics.
+
+---
 
 This project is licensed under the **Apache-2.0 License** — see the [LICENSE](LICENSE) file for details.
 
