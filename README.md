@@ -4,7 +4,7 @@
 
 This project contains the data and scripts used for analyzing agentic pull requests on GitHub — that is, pull requests created or assisted by autonomous coding agents.
 
-## 📌 Overview
+## Overview
 
 In the era of agentic software development, autonomous agents (LLM-based systems that can read and modify code) are increasingly creating and submitting pull requests. This repository supports replication and exploration of a study into:
 
