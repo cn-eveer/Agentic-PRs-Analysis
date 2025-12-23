@@ -1,0 +1,31 @@
+id,agent,Decision,html_url,,,,Comments
+3070601228,OpenAI_Codex,No Feedback-loop,https://github.com/zenml-io/zenml/pull/3680,,,,committed after review but not sure it made by agent
+2989648978,Devin,No Feedback-loop,https://github.com/calcom/cal.com/pull/20670,,,,
+3223161592,Cursor,No Feedback-loop,https://github.com/getsentry/sentry-javascript/pull/16957,,,,
+3077747496,OpenAI_Codex,No Feedback-loop,https://github.com/ryokun6/ryos/pull/66,,,,
+3098960084,Copilot,Has Feedback-loop,https://github.com/mlflow/mlflow/pull/15953,,,,
+2952353649,Devin,No Feedback-loop,https://github.com/liam-hq/liam/pull/1015,,,,human intervention (resolve conflict after approval)
+3115492498,OpenAI_Codex,No Feedback-loop,https://github.com/RAGEN-AI/RAGEN/pull/99,,,,
+3191369762,Cursor,No Feedback-loop,https://github.com/trylinky/linky/pull/19,,,,
+3236538506,Cursor,No Feedback-loop,https://github.com/mediar-ai/terminator/pull/215,,,,
+3269407418,OpenAI_Codex,No Feedback-loop,https://github.com/TobikoData/sqlmesh/pull/5042,,,,
+3169977033,Devin,No Feedback-loop,https://github.com/liam-hq/liam/pull/2166,,,,
+3104286323,OpenAI_Codex,No Feedback-loop,https://github.com/alexanderjeurissen/ranger_devicons/pull/127,,,,
+3171314067,Devin,No Feedback-loop,https://github.com/liam-hq/liam/pull/2186,,,,commit after BOT review+Local ClaudeCode
+3097223794,OpenAI_Codex,No Feedback-loop,https://github.com/effekseer/Effekseer/pull/1058,,,,
+2831492164,Devin,No Feedback-loop,https://github.com/OHIF/Viewers/pull/4765,,,,
+3019949623,Devin,No Feedback-loop,https://github.com/OHIF/Viewers/pull/4998,,,,
+3204638331,OpenAI_Codex,No Feedback-loop,https://github.com/rsyslog/rsyslog/pull/5745,,,,
+3155710420,Devin,No Feedback-loop,https://github.com/liam-hq/liam/pull/2067,,,,
+3085513914,OpenAI_Codex,No Feedback-loop,https://github.com/elizaOS/eliza/pull/4739,,,,
+3105671567,OpenAI_Codex,No Feedback-loop,https://github.com/OpenHFT/Chronicle-Wire/pull/1100,,,,
+3037534591,Devin,No Feedback-loop,https://github.com/ryokun6/ryos/pull/11,,,,
+3209484916,Copilot,No Feedback-loop,https://github.com/microsoft/ebpf-for-windows/pull/4501,,,,human intervention (agent failed to push rebase)
+3144119383,Copilot,Has Feedback-loop,https://github.com/Azure/azure-mcp/pull/362,,,,
+3159916588,OpenAI_Codex,No Feedback-loop,https://github.com/bruin-data/bruin/pull/811,,,,
+2988982716,Devin,No Feedback-loop,https://github.com/antiwork/flexile/pull/99,,,,
+3086812636,OpenAI_Codex,No Feedback-loop,https://github.com/dropseed/plain/pull/36,,,,
+3121482672,OpenAI_Codex,No Feedback-loop,https://github.com/prebid/Prebid.js/pull/13279,,,,
+3147261806,Copilot,Human intervention,https://github.com/remotion-dev/remotion/pull/5371,,,,human intervented but fb loop exist
+3246679061,OpenAI_Codex,No Feedback-loop,https://github.com/wieslawsoltes/Dock/pull/758,,,,committed after review but not sure it made by agent
+3147006466,OpenAI_Codex,No Feedback-loop,https://github.com/bytebot-ai/bytebot/pull/31,,,,committed after review but not sure it made by agent

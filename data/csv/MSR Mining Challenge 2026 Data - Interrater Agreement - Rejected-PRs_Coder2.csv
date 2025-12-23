@@ -1,0 +1,31 @@
+id,agent,Decision,html_url,,,Comments
+3065966214,Devin,Agentic Failure,https://github.com/vdaas/vald/pull/2967,,,failing tests
+2897928860,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6819,,,
+3161744251,Devin,Non-Agentic Failure,https://github.com/antiwork/flexile/pull/386,,,due to inactivity
+3087293846,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21496,,,due to inactivity
+3134558199,OpenAI_Codex,Agentic Failure,https://github.com/stackblitz-labs/bolt.diy/pull/1776,,,
+3061575023,Devin,Non-Agentic Failure,https://github.com/codestoryai/sidecar/pull/2171,,,due to inactivity
+3070123093,OpenAI_Codex,Agentic Failure,https://github.com/AlaSQL/alasql/pull/2109,,,failing tests
+3154758729,Copilot,Non-Agentic Failure,https://github.com/Azure/azure-mcp/pull/393,,,This is being done here right? #415
+3088911721,OpenAI_Codex,Agentic Failure,https://github.com/commaai/opendbc/pull/2301,,,failing tests
+2913956135,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2349,,,due to inactivity
+3078077090,Copilot,Agentic Failure,https://github.com/dotnet/aspire/pull/9428,,,failing tests
+3247152239,Copilot,Agentic Failure,https://github.com/dotnet/extensions/pull/6632,,,
+3115574575,OpenAI_Codex,Unknown,https://github.com/plantuml/plantuml/pull/2211,,,
+3006639682,Devin,Unknown,https://github.com/crewAIInc/crewAI/pull/2646,,,
+3223522886,Copilot,Agentic Failure,https://github.com/Azure/azure-mcp/pull/580,,,failing tests
+3000024792,Devin,Non-Agentic Failure,https://github.com/cornerstonejs/cornerstone3D/pull/2012,,,due to inactivity
+3192047450,OpenAI_Codex,Non-Agentic Failure,https://github.com/clusterzx/paperless-ai/pull/615,,,due to lack of response.
+3109028427,OpenAI_Codex,Agentic Failure,https://github.com/gridaco/grida/pull/380,,,failing tests
+3198855987,OpenAI_Codex,Unknown,https://github.com/bionic-gpt/bionic-gpt/pull/913,,,
+3206426027,Cursor,Unknown,https://github.com/UIforFreedom/UIF/pull/127,,,
+2840469667,Devin,Agentic Failure,https://github.com/onlook-dev/onlook/pull/1302,,,
+3048442859,Devin,Unknown,https://github.com/crewAIInc/crewAI-tools/pull/300,,,
+3139731537,OpenAI_Codex,Agentic Failure,https://github.com/PostHog/posthog.com/pull/11823,,,
+3004429789,Devin,Unknown,https://github.com/crewAIInc/crewAI/pull/2641,,,
+3192936598,Copilot,Non-Agentic Failure,https://github.com/microsoft/windows-rs/pull/3648,,,Closing as unnecessary as the defaults are already set to read-only.
+3224590973,Cursor,Unknown,https://github.com/mediar-ai/terminator/pull/197,,,
+3119486435,OpenAI_Codex,Agentic Failure,https://github.com/sequinstream/sequin/pull/1738,,,failing tests
+3245584783,Claude_Code,Non-Agentic Failure,https://github.com/graphistry/pygraphistry/pull/707,,,forward
+2889088401,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55015,,,due to inactivity.
+2793592645,Devin,Non-Agentic Failure,https://github.com/modelcontextprotocol/inspector/pull/125,,,due to inactivity.

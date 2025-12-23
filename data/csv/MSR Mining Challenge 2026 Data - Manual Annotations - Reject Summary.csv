@@ -1,0 +1,7 @@
+Agent,Agentic Failure,Non-Agentic Failure,Unknown,Total
+Claude_Code,1,4,3,8
+Copilot,19,17,21,57
+Cursor,15,1,6,22
+Devin,37,69,47,153
+OpenAI_Codex,54,19,40,113
+Grand Total,126,110,117,353

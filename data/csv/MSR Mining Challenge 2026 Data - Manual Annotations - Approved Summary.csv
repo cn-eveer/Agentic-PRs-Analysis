@@ -1,0 +1,7 @@
+Agent,Has Feedback-loop,Human intervation,No Feedback-loop,None,Total
+Claude_Code,0,0,8,0,8
+Copilot,13,16,11,9,49
+Cursor,1,0,30,2,33
+Devin,14,11,74,8,107
+OpenAI_Codex,0,1,165,1,167
+Grand Total,28,28,288,20,364
