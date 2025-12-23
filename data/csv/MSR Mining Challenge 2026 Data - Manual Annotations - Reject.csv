@@ -1,354 +1,354 @@
-id,agent,Decision,html_url,Comment,,,
-3077057256,Copilot,Unknown,https://github.com/hyperlight-dev/hyperlight/pull/513,,,,
-3112029851,Copilot,Unknown,https://github.com/dotnet/aspire/pull/9653,,,,
-3203756006,OpenAI_Codex,Agentic Failure,https://github.com/robinkarlberg/transfer.zip-web/pull/34,"Incredibly bad commit, doesn't even work.",,,
-2904472759,Devin,Unknown,https://github.com/whitphx/stlite/pull/1396,,,,
-3200433499,Copilot,Unknown,https://github.com/microsoft/ebpf-for-windows/pull/4495,,,,
-3093421796,Copilot,Agentic Failure,https://github.com/dotnet/msbuild/pull/11912,I wanted the change inside that PR 👎,,,
-3069101459,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21358,continued at #21380,,,
-3086912526,OpenAI_Codex,Unknown,https://github.com/Skyvern-AI/skyvern/pull/2441,,,,
-3119417188,OpenAI_Codex,Non-Agentic Failure,https://github.com/oven-sh/bun/pull/20193,PR #20356,,,
-3134945953,OpenAI_Codex,Non-Agentic Failure,https://github.com/joamag/boytacean/pull/24,Closing as duplicate of #26,,,
-3137788023,OpenAI_Codex,Agentic Failure,https://github.com/wandb/weave/pull/4719,Failing tests,,,
-3245071690,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/715,,,,
-3085430966,Copilot,Unknown,https://github.com/Azure/azure-sdk-for-go/pull/24678,,,,
-3070964243,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/701,Failing tests,,,
-2895840786,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55201,due to inactivity,,,
-2757124156,Devin,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/38335,due to inactivity,,,
-3075375258,Cursor,Unknown,https://github.com/volcengine/verl/pull/1594,,,,
-3225248824,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/658,,,,
-3142458595,OpenAI_Codex,Unknown,https://github.com/gensx-inc/gensx/pull/768,,,,
-3095074851,OpenAI_Codex,Agentic Failure,https://github.com/writer/writer-framework/pull/886,due to inactivity,,,
-3158099802,Devin,Non-Agentic Failure,https://github.com/AgentOps-AI/agentops/pull/1088,"Closing this PR to create a comprehensive solution that addresses debug logs across all instrumentation modules, not just Google ADK.",,,
-3246352490,Devin,Non-Agentic Failure,https://github.com/langbot-app/LangBot/pull/1585,due to inactivity,,,
-3173180612,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-net/pull/50839,Failing tests,,,
-2899428182,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6826,,,,
-2888185420,Claude_Code,Non-Agentic Failure,https://github.com/SoftFever/OrcaSlicer/pull/8624,I intended to open a PR for my own fork.,,,
-3022935755,Devin,Agentic Failure,https://github.com/risingwavelabs/risingwave/pull/21589,Failing tests,,,
-3125360396,OpenAI_Codex,Agentic Failure,https://github.com/leoafarias/fvm/pull/855,Failing tests,,,
-3102274919,OpenAI_Codex,Unknown,https://github.com/gridaco/grida/pull/361,,,,
-3115492283,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2949,Closing due to inactivity,,,
-3169102437,Copilot,Non-Agentic Failure,https://github.com/andrewlock/NetEscapades.EnumGenerators/pull/156,Superseded by #159,,,
-3230603903,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1698,Failing tests,,,
-3037616016,Devin,Non-Agentic Failure,https://github.com/GlareDB/glaredb/pull/3765,"My bad, forgot this was implemented. We don't need bespoke docs for this.",,,
-2878399010,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2221,Closing due to inactivity.,,,
-3134478540,Copilot,Agentic Failure,https://github.com/dotnet/diagnostics/pull/5499,We need to come up with a different fix. Closing.,,,
-3071706456,OpenAI_Codex,Unknown,https://github.com/lunary-ai/lunary/pull/969,404,,,
-3118854425,Devin,Unknown,https://github.com/Mooncake-Labs/pg_mooncake/pull/152,,,,
-3263291835,Devin,Agentic Failure,https://github.com/567-labs/instructor/pull/1747,Failing tests,,,
-3221900086,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI-tools/pull/373,due to inactivity,,,
-2866881273,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3941,due to inactivity,,,
-3070073796,OpenAI_Codex,Agentic Failure,https://github.com/commaai/panda/pull/2199,Failing tests,,,
-3245069979,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/709,Failing tests,,,
-3162485837,Copilot,Unknown,https://github.com/dotnet/dotnet-api-docs/pull/11493,,,,
-3070964333,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/702,Failing tests,,,
-3143758141,OpenAI_Codex,Non-Agentic Failure,https://github.com/gofiber/fiber/pull/3518,#3604,,,
-3201769355,Copilot,Non-Agentic Failure,https://github.com/babalae/better-genshin-impact/pull/1831,copilot 你真棒，不采纳，但狠狠的抄了,,,
-2841184790,Devin,Agentic Failure,https://github.com/onlook-dev/onlook/pull/1317,Failing tests,,,
-3169753530,OpenAI_Codex,Unknown,https://github.com/onlook-dev/onlook/pull/2269,,,,
-2859359419,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1424,,,,
-2893208755,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6787,,,,
-3106238975,Devin,Non-Agentic Failure,https://github.com/ComposioHQ/composio/pull/1605,due to inactivity,,,
-3240836795,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/63363,due to inactivity,,,
-2819751239,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1172,,,,
-3245082884,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/725,,,,
-3034517667,Devin,Non-Agentic Failure,https://github.com/schemahero/schemahero/pull/1170,due to inactivity,,,
-3154330497,OpenAI_Codex,Agentic Failure,https://github.com/openai/openai-agents-js/pull/114,Failing tests,,,
-3104375121,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-net/pull/50357,This implementation introduces a breaking change. I'm going to kill the copilot experiment here and adjust the approach by hand,,,
-3170056340,Copilot,Unknown,https://github.com/microsoft/WSL/pull/13180,,,,
-3092840203,OpenAI_Codex,Unknown,https://github.com/ryokun6/ryos/pull/110,,,,
-3251517108,Cursor,Agentic Failure,https://github.com/getkirby/kirby/pull/7415,Failing tests,,,
-3133585449,Devin,Non-Agentic Failure,https://github.com/test-zeus-ai/testzeus-hercules/pull/61,due to inactivity,,,
-3245069878,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/708,,,,
-2825676107,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1210,,,,
-3151429280,OpenAI_Codex,Agentic Failure,https://github.com/featureform/enrichmcp/pull/70,Failing tests,,,
-3197329625,Copilot,Unknown,https://github.com/kanisterio/kanister/pull/3541,,,,
-3184403763,OpenAI_Codex,Unknown,https://github.com/ESPresense/ESPresense/pull/1737,,,,
-2868408082,Devin,Agentic Failure,https://github.com/bentoml/BentoML/pull/5241,Failing tests,,,
-3241826198,OpenAI_Codex,Agentic Failure,https://github.com/openai/codex/pull/1609,Failing tests,,,
-3074574690,OpenAI_Codex,Unknown,https://github.com/langchain-ai/agents-from-scratch/pull/32,,,,
-2887680476,Devin,Agentic Failure,https://github.com/pdfme/pdfme/pull/773,Failing tests,,,
-3071786788,OpenAI_Codex,Unknown,https://github.com/lunary-ai/lunary/pull/974,404,,,
-3186515135,OpenAI_Codex,Agentic Failure,https://github.com/PrismarineJS/minecraft-data/pull/1023,#1024 is better,,,
-2774379409,Devin,Non-Agentic Failure,https://github.com/goat-sdk/goat/pull/199,Closing due to inactivity.,,,
-3098861776,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/19969,Failing tests,,,
-2954534559,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/56441,,,,
-2893535875,Devin,Unknown,https://github.com/pdfme/pdfme/pull/803,,,,
-3095585241,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1939,,,,
-2982065302,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/20624,"thnx for the PR devin, but the other human did it better",,,
-3201648954,Cursor,Agentic Failure,https://github.com/novuhq/novu/pull/8639,Failing tests,,,
-3266424520,Cursor,Unknown,https://github.com/deepnoodle-ai/risor/pull/409,,,,
-3089545186,OpenAI_Codex,Non-Agentic Failure,https://github.com/mrwadams/stride-gpt/pull/71,Will be addressed by #72,,,
-3147729200,OpenAI_Codex,Agentic Failure,https://github.com/bitcoin/bitcoin/pull/32753,Failing tests,,,
-3155923412,Cursor,Agentic Failure,https://github.com/vercel/ai-chatbot/pull/1058,Failing tests,,,
-3178242104,Copilot,Non-Agentic Failure,https://github.com/owid/owid-grapher/pull/5053,Closing due to inactivity.,,,
-3265505959,OpenAI_Codex,Non-Agentic Failure,https://github.com/ikamensh/flynt/pull/221,"no need to merge, documented this analysis in the issue #106",,,
-2922222913,Devin,Agentic Failure,https://github.com/pdfme/pdfme/pull/855,Failing tests,,,
-3204659964,OpenAI_Codex,Unknown,https://github.com/bionic-gpt/bionic-gpt/pull/919,,,,
-2990080867,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2592,Closing due to inactivity,,,
-3236326596,Copilot,Non-Agentic Failure,https://github.com/taiga-family/taiga-ui/pull/11348,@copilot I see you later,,,
-3246186580,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/755,,,,
-2877141068,Devin,Unknown,https://github.com/liam-hq/liam/pull/780,,,,
-3141153468,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-js/pull/34800,,,,
-2895019210,Devin,Agentic Failure,https://github.com/trycompai/comp/pull/94,Failing tests,,,
-3147340923,Devin,Agentic Failure,https://github.com/web-infra-dev/rspack/pull/10677,Failing tests,,,
-2870989734,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2201,Closing due to inactivity.,,,
-3219210709,Cursor,Agentic Failure,https://github.com/formbricks/formbricks/pull/6213,Failing tests,,,
-3158584991,Devin,Unknown,https://github.com/liam-hq/liam/pull/2078,,,,
-3179789341,Copilot,Unknown,https://github.com/microsoft/Microsoft365DSC/pull/6229,,,,
-2762054930,Devin,Unknown,https://github.com/bespokelabsai/curator/pull/292,,,,
-3003865817,Devin,Unknown,https://github.com/crewAIInc/crewAI/pull/2639,,,,
-3091868377,OpenAI_Codex,Agentic Failure,https://github.com/netket/netket/pull/2049,Failing tests,,,
-2971334427,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20541,This PR has no issue related issue nor the details are clear,,,
-3189766514,Cursor,Agentic Failure,https://github.com/elizaOS/eliza/pull/5332,Failing tests,,,
-3230529031,Copilot,Non-Agentic Failure,https://github.com/NewFuture/DDNS/pull/524,see #531,,,
-3162624847,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21938,Closing due to inactivity,,,
-3048475288,Devin,Unknown,https://github.com/liam-hq/liam/pull/1622,,,,
-2767960820,Devin,Unknown,https://github.com/lightdash/lightdash/pull/13092,,,,
-2899419096,Devin,Non-Agentic Failure,https://github.com/OneKeyHQ/app-monorepo/pull/6824,Closing this PR as it addressed the wrong component.,,,
-3101409173,OpenAI_Codex,Agentic Failure,https://github.com/skypilot-org/skypilot/pull/5810,Failing tests,,,
-3070999255,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/729,Failing tests,,,
-2895276856,Devin,Non-Agentic Failure,https://github.com/marimo-team/marimo/pull/3976,Closing due to inactivity,,,
-3267605140,Claude_Code,Unknown,https://github.com/graphistry/pygraphistry/pull/716,,,,
-3243477859,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/685,Failing tests,,,
-2947941261,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/56408,Closing due to inactivity,,,
-3242300961,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Svg.Skia/pull/344,Failing tests,,,
-3254423495,OpenAI_Codex,Agentic Failure,https://github.com/stanford-crfm/levanter/pull/1090,Failing tests,,,
-3070953480,OpenAI_Codex,Unknown,https://github.com/julep-ai/julep/pull/1397,,,,
-2822270672,Devin,Agentic Failure,https://github.com/airbytehq/airbyte/pull/52674,Failing tests,,,
-3118419390,OpenAI_Codex,Non-Agentic Failure,https://github.com/spring-projects/spring-kafka/pull/3944,Merged via 85b3aee.,,,
-3083630331,OpenAI_Codex,Agentic Failure,https://github.com/Significant-Gravitas/AutoGPT/pull/10005,This doesn't fix error cases. I have a better fix for this :),,,
-3072192774,OpenAI_Codex,Unknown,https://github.com/allenai/reward-bench/pull/234,,,,
-3140480772,Copilot,Agentic Failure,https://github.com/microsoft/vstest/pull/15099,That tiny blurb will not save the documentation.,,,
-2866064019,Devin,Unknown,https://github.com/wix/react-native-ui-lib/pull/3523,,,,
-3158776739,Claude_Code,Non-Agentic Failure,https://github.com/Shopify/roast/pull/284,Closing since overlaps richer functionality in #285,,,
-2843334531,Devin,Agentic Failure,https://github.com/promptfoo/promptfoo/pull/3047,Failing tests,,,
-2893951588,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6801,,,,
-2821981350,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1184,,,,
-3098884416,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/19976,"added the test in the wrong folder, real one already exists",,,
-2792145491,Devin,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/38695,Closing due to inactivity.,,,
-3134390007,Copilot,Unknown,https://github.com/dotnet/sdk/pull/49314,,,,
-3132160698,Copilot,Unknown,https://github.com/microsoft/vscode/pull/251069,,,,
-3234229310,Copilot,Non-Agentic Failure,https://github.com/onnx/onnx/pull/7124,"Closing this, redoing it in #7158",,,
-3075881390,Copilot,Unknown,https://github.com/microsoft/playwright/pull/36011,,,,
-3227962360,Copilot,Unknown,https://github.com/Azure/bicep-registry-modules/pull/5606,,,,
-3224208030,OpenAI_Codex,Unknown,https://github.com/openai/codex/pull/1545,,,,
-3218973564,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/22379,Closing due to inactivity,,,
-3049445842,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2790,Failing tests,,,
-2934595764,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2422,Closing due to inactivity,,,
-3119705765,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20199,Failing tests,,,
-3116850813,OpenAI_Codex,Non-Agentic Failure,https://github.com/facet-rs/facet/pull/741,"Yeah, doesn't seem worth it atm.",,,
-3179263604,Copilot,Unknown,https://github.com/microsoft/genaiscript/pull/1656,,,,
-2781604779,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6490,,,,
-3096677627,OpenAI_Codex,Unknown,https://github.com/superagent-ai/vibekit/pull/16,,,,
-3161649548,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21933,Closing due to inactivity,,,
-2776790742,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6465,,,,
-3128551483,Copilot,Agentic Failure,https://github.com/microsoft/vscode/pull/250962,Failing tests,,,
-3161708496,Copilot,Non-Agentic Failure,https://github.com/App-vNext/Polly/pull/2657,"I don't understand where this has come from or why, so I'm closing it as there has been zero discussion in advance.",,,It looks to be replicating functionality that already exists downstream from dotnet/extensions.
-3071010253,OpenAI_Codex,Unknown,https://github.com/trycompai/comp/pull/656,,,,
-3098385347,OpenAI_Codex,Agentic Failure,https://github.com/seasonedcc/composable-functions/pull/179,Failing tests,,,
-3265063672,Cursor,Agentic Failure,https://github.com/thirdweb-dev/js/pull/7720,Failing tests,,,
-3086565525,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21491,Closing due to inactivity,,,
-3245069472,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/707,Failing tests,,,
-2765532800,Devin,Non-Agentic Failure,https://github.com/labring/laf/pull/2038,Closing due to inactivity.,,,
-3234182132,Cursor,Unknown,https://github.com/mostafaalagamy/Metrolist/pull/991,,,,
-3117928238,OpenAI_Codex,Agentic Failure,https://github.com/vllm-project/vllm/pull/19145,,,,
-3071982253,OpenAI_Codex,Agentic Failure,https://github.com/commaai/opendbc/pull/2267,Failing tests,,,
-3257538654,OpenAI_Codex,Unknown,https://github.com/jafioti/luminal/pull/131,,,,
-3225135545,OpenAI_Codex,Agentic Failure,https://github.com/amantus-ai/vibetunnel/pull/324,Failing tests,,,
-2920196599,Devin,Agentic Failure,https://github.com/near/nearcore/pull/13132,Failing tests,,,
-3166339601,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20573,Failing tests,,,
-3225248115,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/656,,,,
-2896371903,Devin,Non-Agentic Failure,https://github.com/pdfme/pdfme/pull/812,duplicated,,,
-3143034989,OpenAI_Codex,Unknown,https://github.com/bionic-gpt/bionic-gpt/pull/823,,,,
-3206405282,Claude_Code,Non-Agentic Failure,https://github.com/fireship-io/flamethrower/pull/96,Closing this PR as it was created without proper consideration. Apologies for the noise.,,,
-3176828879,Cursor,Agentic Failure,https://github.com/getsentry/sentry/pull/94360,Failing tests,,,
-3144417356,Cursor,Agentic Failure,https://github.com/getsentry/sentry/pull/93538,Failing tests,,,
-2885068224,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3990,Closing due to inactivity.,,,
-3275676664,Copilot,Non-Agentic Failure,https://github.com/halo-dev/halo/pull/7645,Duplicates of #7644.,,,
-3216373575,Cursor,Agentic Failure,https://github.com/browser-use/browser-use/pull/2380,Failing tests,,,
-3077887395,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1888,,,,
-2861747083,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3937,Closing due to inactivity.,,,
-3102144371,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20058,Failing tests,,,
-2883330678,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3982,Closing due to inactivity.,,,
-3219823665,OpenAI_Codex,Agentic Failure,https://github.com/arthurhenrique/cookiecutter-fastapi/pull/160,1 failing check,,,
-2897533176,Devin,Agentic Failure,https://github.com/trycompai/comp/pull/103,"6 successful, 1 failing, and 1 skipped checks",,,
-3234480284,Devin,Non-Agentic Failure,https://github.com/liam-hq/liam/pull/2574,"@MH4GF #2596 Sorry in the midst of your review.The policy in this PR does not work well, so we have revised the policy in the PR above.We hope you will continue to review the above PR.",,,
-3115039109,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2944,Closing due to inactivity for more than 7 days.,,,
-3206405036,Claude_Code,Non-Agentic Failure,https://github.com/fireship-io/flamethrower/pull/95,Closing this PR as it was created without proper consideration. Apologies for the noise.,,,
-2782330828,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1031,,,,
-2825991690,Devin,Non-Agentic Failure,https://github.com/promptfoo/promptfoo/pull/2958,Closing due to inactivity.,,,
-2765877627,Devin,Agentic Failure,https://github.com/onlook-dev/onlook/pull/976,1 failing and 1 successful checks,,,
-3136290510,Copilot,Unknown,https://github.com/celestiaorg/celestia-core/pull/1991,,,,
-3211993316,OpenAI_Codex,Unknown,https://github.com/1517005260/graph-rag-agent/pull/30,,,,
-3087399940,Copilot,Non-Agentic Failure,https://github.com/dnnsoftware/Dnn.Platform/pull/6559,"This was just a test of copilot agent mode, I think I'll submit a more proper PR for this later...",,,
-3228764972,Cursor,Agentic Failure,https://github.com/jdx/mise/pull/5637,"7 failing, 1 successful, and 3 skipped checks",,,
-2813961093,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/52574,,,,
-3112987044,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2937,Closing due to inactivity for more than 7 days.,,,
-3155310952,Devin,Unknown,https://github.com/liam-hq/liam/pull/2057,,,,
-2771182139,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/993,,,,
-3246272592,Cursor,Agentic Failure,https://github.com/kortix-ai/suna/pull/1019,1 failing and 1 successful checks,,,
-3132171150,Copilot,Non-Agentic Failure,https://github.com/microsoft/vscode/pull/251072,Continues in #251182,,,
-3260776885,Devin,Agentic Failure,https://github.com/antiwork/gumroad/pull/685,"2 failing, 67 successful, and 2 skipped checks",,,
-3122285142,OpenAI_Codex,Unknown,https://github.com/trycompai/comp/pull/800,,,,
-3070961665,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/699,Quality Gate Failed Quality Gate failed,,,
-3240935078,Cursor,Agentic Failure,https://github.com/TanStack/db/pull/280,"2 failing, 2 successful, and 1 cancelled checks",,,
-2861793133,Devin,Unknown,https://github.com/different-ai/note-companion/pull/329,,,,
-2964974679,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2512,"Hey, good call. It was done last week in another PR. We can install the latest crewai version and test yourself",,,
-2903833367,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1559,,,,
-3092347933,OpenAI_Codex,Unknown,https://github.com/Skyvern-AI/skyvern/pull/2475,,,,
-2866186240,Devin,Unknown,https://github.com/antiwork/shortest/pull/351,,,,
-3165098830,Devin,Agentic Failure,https://github.com/antiwork/helper/pull/536,"4 failing, 1 neutral, 1 skipped, and 3 successful checks",,,
-2804518743,Devin,Non-Agentic Failure,https://github.com/lightdash/lightdash/pull/13374,had a problem deploying to devin/1737552126-fix-issue-2758 - lightdash PR #13374 11 months ago — with  Render Failure,,,
-3265522902,OpenAI_Codex,Unknown,https://github.com/puemos/hls-downloader/pull/427,,,,
-3231408675,Copilot,Non-Agentic Failure,https://github.com/ToolJet/ToolJet/pull/13413,Dummy PR.,,,
-2997203967,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20710,Closing as requested by user to await more detailed instructions.,,,
-2802889835,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/52064,Closing due to inactivity.,,,
-2861673771,Devin,Unknown,https://github.com/different-ai/note-companion/pull/328,,,,
-2859077171,Devin,Unknown,https://github.com/different-ai/note-companion/pull/324,,,,
-3245067419,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/701,,,,
-3148964389,Devin,Unknown,https://github.com/liam-hq/liam/pull/2027,,,,
-3197785109,Cursor,Non-Agentic Failure,https://github.com/getsentry/sentry/pull/94841,beyond my or cursors skill at this problem so I'll give up,,,
-2867739342,Devin,Agentic Failure,https://github.com/bentoml/BentoML/pull/5237,"This doesn't look right, closing it now",,,
-3267556588,Copilot,Non-Agentic Failure,https://github.com/ublue-os/bluefin/pull/2852,Ok not merging this but totally stealing the donations.md improvements!,,,
-3259892866,Copilot,Unknown,https://github.com/microsoft/genaiscript/pull/1790,,,,
-2889490163,Devin,Unknown,https://github.com/different-ai/note-companion/pull/341,,,,
-3176255193,Cursor,Unknown,https://github.com/grafbase/grafbase/pull/3244,,,,
-3192696250,OpenAI_Codex,Agentic Failure,https://github.com/surrealdb/surrealdb/pull/6146,"36 successful, 1 failing, and 1 skipped checks",,,
-2915517113,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2354,Closing due to inactivity for more than 7 days.,,,
-3108623918,Copilot,Non-Agentic Failure,https://github.com/Azure-Samples/azure-search-openai-demo/pull/2555,This was a test issue created for a demo of Copilot Coding Agent for a talk. I close it. No need to merge this PR.,,,
-3098854152,OpenAI_Codex,Non-Agentic Failure,https://github.com/oven-sh/bun/pull/19964,superseded by #19995,,,
-3243054866,Copilot,Agentic Failure,https://github.com/microsoft/vscode-pull-request-github/pull/7345,"1 failing, 1 in progress, and 1 successful checks",,,
-3087404055,OpenAI_Codex,Agentic Failure,https://github.com/prebid/Prebid.js/pull/13156,2 failing and 4 successful checks,,,
-3072128473,OpenAI_Codex,Non-Agentic Failure,https://github.com/sakaiproject/sakai/pull/13754,Going to close for @ern to give this one a stab,,,
-3070165480,OpenAI_Codex,Unknown,https://github.com/Kanaries/graphic-walker/pull/439,,,,
-3116063940,Copilot,Non-Agentic Failure,https://github.com/DaveSkender/Stock.Indicators/pull/1343,Abandoning. Moot with future plans for site,,,
-3067984156,Devin,Non-Agentic Failure,https://github.com/onlook-dev/onlook/pull/1849,Closing due to inactivity for more than 7 days.,,,
-3062241477,Devin,Agentic Failure,https://github.com/vdaas/vald/pull/2964,[FORMAT] Failed to format.,,,
-3261427589,OpenAI_Codex,Agentic Failure,https://github.com/selfxyz/self/pull/786,this doesn't work,,,
-3139420152,Cursor,Agentic Failure,https://github.com/langfuse/langfuse/pull/7266,"21 successful, 2 failing, and 1 skipped checks",,,
-2852999856,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI-tools/pull/212,Closing due to inactivity.,,,
-3099639511,Copilot,Agentic Failure,https://github.com/dotnet/fsharp/pull/18631,"An unexpected error occurred. For more details, see the detailed logs in GitHub Actions.",,,
-2942219527,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2452,OpenRouter does not support embedding models,,,
-2914474920,Devin,Agentic Failure,https://github.com/antiwork/helper/pull/58,"1 failing, 3 successful, and 1 skipped checks",,,
-3097709863,Copilot,Non-Agentic Failure,https://github.com/microsoft/vscode/pull/249991,"closing as obsolete, we went with Y and N based keybindings",,,
-3180830949,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/62108,,,,
-3023133644,Devin,Unknown,https://github.com/crewAIInc/crewAI-tools/pull/291,,,,
-2876464228,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3959,Closing due to inactivity.,,,
-3123070640,OpenAI_Codex,Unknown,https://github.com/BerriAI/litellm/pull/11463,,,,
-3112357523,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1860,Please restore the TODO comment. ---no response,,,
-3273580906,Claude_Code,Unknown,https://github.com/wolfi-dev/os/pull/61007,,,,
-3067033881,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21343,"18 successful, 17 skipped, 1 failing, and 1 neutral checks",,,
-3101062864,OpenAI_Codex,Non-Agentic Failure,https://github.com/metacraft-labs/codetracer/pull/148,"closing, superseded by #164",,,
-2923118690,Devin,Unknown,https://github.com/wix/react-native-ui-lib/pull/3623,,,,
-3055717125,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1657,17 successful and 2 failing checks,,,
-3112628847,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1865,6 failing and 12 successful checks,,,
-3131240866,OpenAI_Codex,Unknown,https://github.com/onlook-dev/onlook/pull/2123,,,,
-3098414087,OpenAI_Codex,Agentic Failure,https://github.com/CapSoftware/Cap/pull/577,3 successful and 3 failing checks,,,
-3114628181,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/61343,,,,
-3067985764,Devin,Non-Agentic Failure,https://github.com/onlook-dev/onlook/pull/1850,This pull request has been ignored for the connected project wowaemfasoptxrdjhilu because there are no changes detected in apps/backend/supabase directory.,,,
-3070903361,OpenAI_Codex,Non-Agentic Failure,https://github.com/modular/modular/pull/4615,the branch is stale since I forgot about it. let me retry in a new branch,,,
-2921483450,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55778,Closing due to inactivity for more than 7 days.,,,
-3209703127,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1655,@mattkur - definitely not what you had in mind...,,,
-3086740486,OpenAI_Codex,Unknown,https://github.com/dropseed/plain/pull/34,,,,
-3260461026,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/805,"7 failing, 5 successful, and 2 cancelled checks",,,
-3081523540,OpenAI_Codex,Agentic Failure,https://github.com/beyond-all-reason/Beyond-All-Reason/pull/5134,"Closing due to time waste trying to fix ws bug, will revisit later",,,
-2847298223,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2103,1 failing and 3 successful checks,,,
-3115965598,Devin,Unknown,https://github.com/liam-hq/liam/pull/1874,,,,
-3021098408,Devin,Agentic Failure,https://github.com/antiwork/flexile/pull/205,Resolve merge conflicts,,,
-2949664347,Devin,Agentic Failure,https://github.com/cornerstonejs/cornerstone3D/pull/1939,❌ Deploy Preview for cornerstone-3d-docs failed. ,,,
-3125968003,OpenAI_Codex,Agentic Failure,https://github.com/prebid/Prebid.js/pull/13306,5 successful and 1 failing checks,,,
-3164391666,Copilot,Agentic Failure,https://github.com/Z3Prover/z3/pull/7689,this is not a valid fix,,,
-2923130106,Devin,Agentic Failure,https://github.com/wix/react-native-ui-lib/pull/3626,1 failing check,,,
-3196745111,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/22221,Closing due to inactivity for more than 7 days. Configure here.,,,
-3127422033,OpenAI_Codex,Agentic Failure,https://github.com/leoafarias/fvm/pull/869,"9 failing, 2 cancelled, and 6 successful checks",,,
-3029752398,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/59155,Closing due to inactivity for more than 7 days.,,,
-2898666158,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2289,Closing due to inactivity for more than 7 days.,,,
-2849418286,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3927,Closing due to inactivity.,,,
-2763678225,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/1827,1 failing and 3 successful checks @github-actions,,,
-3082132239,Copilot,Unknown,https://github.com/microsoft/azurelinux/pull/13859,,,,
-3246170574,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/749,,,,
-3169219154,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/3050,Closing due to inactivity for more than 7 days. Configure here.,,,
-3160932333,Copilot,Agentic Failure,https://github.com/dotnet/roslyn/pull/79057,Nope. This fix is terrible.,,,
-3189792652,Cursor,Agentic Failure,https://github.com/elizaOS/eliza/pull/5333,8 failing and 3 successful checks,,,
-3258945821,Claude_Code,Unknown,https://github.com/aws-samples/generative-ai-use-cases/pull/1193,,,,
-3135084964,OpenAI_Codex,Non-Agentic Failure,https://github.com/bruin-data/bruin/pull/760,Closing this as we'll handle it as part of another ticket.,,,
-2971152602,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20538,Closing due to inactivity for more than 7 days.,,,
-3169212086,Copilot,Non-Agentic Failure,https://github.com/microsoft/retina/pull/1704,Signed PR: #1783,,,
-3101326488,Devin,Agentic Failure,https://github.com/lingodotdev/lingo.dev/pull/820,1 failing and 1 successful checks,,,
-2939327802,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2439,Closing due to inactivity for more than 7 days.,,,
-3239103350,Cursor,Unknown,https://github.com/kortix-ai/suna/pull/974,,,,
-3156291643,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/3027,Closing due to inactivity for more than 7 days. Configure here.,,,
-3123401020,OpenAI_Codex,Unknown,https://github.com/Doriandarko/deepseek-engineer/pull/15,,,,
-3246169042,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Svg.Skia/pull/382,"11 failing, 5 successful, and 2 cancelled checks",,,
-2771536472,Devin,Unknown,https://github.com/bespokelabsai/curator/pull/304,,,,
-2982953659,Devin,Non-Agentic Failure,https://github.com/near/nearcore/pull/13339,Closing due to inactivity for more than 7 days.,,,
-3130515409,OpenAI_Codex,Agentic Failure,https://github.com/fireproof-storage/fireproof/pull/867,"2 failing, 10 skipped, and 3 successful checks",,,
-3018439207,Devin,Unknown,https://github.com/calcom/cal.com/pull/20962,,,,
-2918417155,Devin,Non-Agentic Failure,https://github.com/BasedHardware/omi/pull/2006,Closing in favor of PR #2009 which has a better implementation,,,
-3234207351,Devin,Unknown,https://github.com/liam-hq/liam/pull/2570,,,,
-3134963182,OpenAI_Codex,Agentic Failure,https://github.com/jafioti/luminal/pull/103,2 successful and 1 failing checks,,,
-3164787820,OpenAI_Codex,Non-Agentic Failure,https://github.com/openai/openai-agents-js/pull/135,This PR was closed because it has been inactive for 7 days since being marked as stale.,,,
-3155023758,OpenAI_Codex,Agentic Failure,https://github.com/pytorch/pytorch/pull/156255,"1 skipped, 139 successful, 2 failing, and 1 neutral checks",,,
-3077094653,Copilot,Agentic Failure,https://github.com/tokens-studio/figma-plugin/pull/3360,"There's some failing checks, can you get them to pass?",,,
-2780647811,Devin,Non-Agentic Failure,https://github.com/whitphx/stlite/pull/1245,Closing due to inactivity.,,,
-3120941664,OpenAI_Codex,Unknown,https://github.com/ckan/ckan/pull/8986,,,,
-3209647114,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1653,"Yikes, not happy with this one.",,,
-2817109062,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3877,Closing due to inactivity.,,,
-3226217517,Copilot,Agentic Failure,https://github.com/clash-verge-rev/clash-verge-rev/pull/4047,Do you think this PR will help reduce your workload in advance? I would assist with the preliminary work. --probably not,,,
-2903812633,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55255,Closing due to inactivity for more than 7 days.,,,
-3077283376,OpenAI_Codex,Non-Agentic Failure,https://github.com/seasonedcc/remix-forms/pull/306,Closing in favor of #308,,,
-3039633986,Devin,Non-Agentic Failure,https://github.com/antiwork/helper/pull/377,"Not feasible until we have a local auth solution, and I'm no longer convinced this is the best idea (the whole Supabase stack works well together and awkwardly otherwise, e.g. auth only works with Supabase Auth) Needs more thought",,,
-2861748481,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3938,Closing due to inactivity.,,,
-3136072840,Copilot,Unknown,https://github.com/microsoft/react-native-windows/pull/14769,,,,
-3030779808,Devin,Unknown,https://github.com/tegnike/aituber-kit/pull/376,,,,
-3135999700,Copilot,Unknown,https://github.com/dotnet/aspire/pull/9823,,,,
-3159464933,Copilot,Unknown,https://github.com/microsoft/playwright-mcp/pull/572,,,,
-3070962378,OpenAI_Codex,Unknown,https://github.com/julep-ai/julep/pull/1401,,,,
-3213717486,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/579,,,,
-3236327722,Copilot,Unknown,https://github.com/taiga-family/taiga-ui/pull/11349,,,,
-3077315151,OpenAI_Codex,Non-Agentic Failure,https://github.com/openai/codex/pull/1050,"Gonna abandon, I let this get really stale.",,,
-3070474086,OpenAI_Codex,Agentic Failure,https://github.com/tact-lang/tact/pull/3095,15 successful and 9 failing checks @github-actions,,,
-3078529665,Copilot,Agentic Failure,https://github.com/dotnet/aspnetcore/pull/62041,"I was hoping that Copilot could handle this fairly ""boring"" task of mapping an implementation that used static analysis to an implementation that used dynamic analysis but it looks like the task is too large for the session limitations enforced by Copilot. :/",,,
-3125195166,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21726,"21 successful, 17 skipped, 1 failing, and 1 neutral checks",,,
-3070996825,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/713,2 failing and 8 successful checks,,,
-3122747306,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-js/pull/34713,Try again --probably did not work,,,
-3125682958,Copilot,Agentic Failure,https://github.com/microsoft/vscode/pull/250894,"@copilot the completions already work for code-tunnel.exe and other .exe. However, the detail property is not provided",,,
-3070996871,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/715,2 failing and 8 successful checks,,,
-3132430389,Devin,Unknown,https://github.com/liam-hq/liam/pull/1965,,,,
-2894762370,Claude_Code,Agentic Failure,https://github.com/567-labs/instructor/pull/1371,"5 failing, 4 successful, and 7 cancelled checks @github-actions",,,
-3106783403,Devin,Non-Agentic Failure,https://github.com/triggerdotdev/trigger.dev/pull/2133,Testing,,,
-3193608588,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/476,"7 failing, 4 successful, 2 cancelled, and 1 neutral checks",,,
-3152808680,OpenAI_Codex,Agentic Failure,https://github.com/elixir-lsp/elixir-ls/pull/1199,29 successful and 3 failing checks,,,
-3077311015,Copilot,Unknown,https://github.com/microsoft/azure-pipelines-tasks/pull/21038,,,,
-2814535457,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3873,Closing due to inactivity.,,,
-3056316834,Devin,Agentic Failure,https://github.com/formancehq/ledger/pull/909,"3 skipped, 3 successful, and 2 failing checks @github-actions",,,
-3242573009,OpenAI_Codex,Non-Agentic Failure,https://github.com/imba/imba/pull/909,"Codex did not have access to the imba.io repo, will try again while it has.",,,
-3050185194,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/59733,Just a test. Please disregard.,,,
-3218555468,OpenAI_Codex,Agentic Failure,https://github.com/featureform/enrichmcp/pull/121,"2 failing, 2 cancelled, and 1 skipped checks",,,
-2843181529,Devin,Agentic Failure,https://github.com/promptfoo/promptfoo/pull/3045,STAHP,,,
-3185789444,Cursor,Unknown,https://github.com/novuhq/novu/pull/8605,,,,
-3203675489,OpenAI_Codex,Agentic Failure,https://github.com/567-labs/instructor/pull/1650,"2 failing, 1 skipped, and 14 successful checks",,,
-3070258467,OpenAI_Codex,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/40674,This PR has been closed because of inactivity.,,,
-3052823757,Devin,Unknown,https://github.com/yamadashy/repomix/pull/536,,,,
-3228763432,Cursor,Agentic Failure,https://github.com/jdx/mise/pull/5635,too many changes,,,
-3075141911,OpenAI_Codex,Agentic Failure,https://github.com/EduardoPires/EquinoxProject/pull/211,1 failing check,,,
-3053325093,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21217,Closing this PR as requested. The approach focused too much on making tests pass rather than properly optimizing the .tz() calls in loops.,,,
-3070088687,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1859,,,,
-3115694514,OpenAI_Codex,Non-Agentic Failure,https://github.com/recallnet/js-recall/pull/494,"gonna close this out, but feel free to re-open if we figure out the auth",,,
-3273160834,Copilot,Non-Agentic Failure,https://github.com/bugsink/bugsink/pull/171,Closing this; I've learned a bit more about setting up the copilot env. Let's see if a fresh try (with new instructions and env) will be better.,,,
-2895789917,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2283,Closing due to inactivity for more than 7 days.,,,
-2889243475,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1501,,,,
-3127516559,OpenAI_Codex,Unknown,https://github.com/joamag/boytacean/pull/17,,,,
-3155893392,OpenAI_Codex,Non-Agentic Failure,https://github.com/Portkey-AI/gateway/pull/1149,"Hey! Closing this PR as we have already added requiredMetadataKeys plugin in #1147 . We can extend the same plugin for any new functionality, if requested by the community.",,,
-2881814219,Devin,Agentic Failure,https://github.com/wix/react-native-ui-lib/pull/3534,1 failing check,,,
-3219381363,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/605,,,,
-3121717297,Devin,Agentic Failure,https://github.com/novuhq/novu/pull/8462,"16 successful, 6 skipped, 1 failing, and 3 neutral checks",,,
-3051320539,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2799,Closing due to inactivity for more than 7 days.,,,
-2936530524,Devin,Non-Agentic Failure,https://github.com/near/nearcore/pull/13174,Closing in favor of #13203,,,
-3114736501,OpenAI_Codex,Agentic Failure,https://github.com/temporalio/temporal/pull/7860,2 failing checks,,,
-2889227305,Devin,Non-Agentic Failure,https://github.com/antiwork/helper/pull/1,(testing Devin works),,,
-3159385903,OpenAI_Codex,Unknown,https://github.com/gridaco/grida/pull/391,,,,
-3136476031,Devin,Agentic Failure,https://github.com/antiwork/gumroad/pull/316,Not much I can re-use here; created #343,,,
-3226153741,Devin,Unknown,https://github.com/PromtEngineer/localGPT/pull/845,,,,
-3081839872,OpenAI_Codex,Agentic Failure,https://github.com/pydata/pandas-datareader/pull/1003,11 failing checks,,,
+id,agent,Decision,html_url,Comment
+3077057256,Copilot,Unknown,https://github.com/hyperlight-dev/hyperlight/pull/513,
+3112029851,Copilot,Unknown,https://github.com/dotnet/aspire/pull/9653,
+3203756006,OpenAI_Codex,Agentic Failure,https://github.com/robinkarlberg/transfer.zip-web/pull/34,"Incredibly bad commit, doesn't even work."
+2904472759,Devin,Unknown,https://github.com/whitphx/stlite/pull/1396,
+3200433499,Copilot,Unknown,https://github.com/microsoft/ebpf-for-windows/pull/4495,
+3093421796,Copilot,Agentic Failure,https://github.com/dotnet/msbuild/pull/11912,I wanted the change inside that PR 👎
+3069101459,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21358,continued at #21380
+3086912526,OpenAI_Codex,Unknown,https://github.com/Skyvern-AI/skyvern/pull/2441,
+3119417188,OpenAI_Codex,Non-Agentic Failure,https://github.com/oven-sh/bun/pull/20193,PR #20356
+3134945953,OpenAI_Codex,Non-Agentic Failure,https://github.com/joamag/boytacean/pull/24,Closing as duplicate of #26
+3137788023,OpenAI_Codex,Agentic Failure,https://github.com/wandb/weave/pull/4719,Failing tests
+3245071690,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/715,
+3085430966,Copilot,Unknown,https://github.com/Azure/azure-sdk-for-go/pull/24678,
+3070964243,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/701,Failing tests
+2895840786,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55201,due to inactivity
+2757124156,Devin,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/38335,due to inactivity
+3075375258,Cursor,Unknown,https://github.com/volcengine/verl/pull/1594,
+3225248824,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/658,
+3142458595,OpenAI_Codex,Unknown,https://github.com/gensx-inc/gensx/pull/768,
+3095074851,OpenAI_Codex,Agentic Failure,https://github.com/writer/writer-framework/pull/886,due to inactivity
+3158099802,Devin,Non-Agentic Failure,https://github.com/AgentOps-AI/agentops/pull/1088,"Closing this PR to create a comprehensive solution that addresses debug logs across all instrumentation modules, not just Google ADK."
+3246352490,Devin,Non-Agentic Failure,https://github.com/langbot-app/LangBot/pull/1585,due to inactivity
+3173180612,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-net/pull/50839,Failing tests
+2899428182,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6826,
+2888185420,Claude_Code,Non-Agentic Failure,https://github.com/SoftFever/OrcaSlicer/pull/8624,I intended to open a PR for my own fork.
+3022935755,Devin,Agentic Failure,https://github.com/risingwavelabs/risingwave/pull/21589,Failing tests
+3125360396,OpenAI_Codex,Agentic Failure,https://github.com/leoafarias/fvm/pull/855,Failing tests
+3102274919,OpenAI_Codex,Unknown,https://github.com/gridaco/grida/pull/361,
+3115492283,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2949,Closing due to inactivity
+3169102437,Copilot,Non-Agentic Failure,https://github.com/andrewlock/NetEscapades.EnumGenerators/pull/156,Superseded by #159
+3230603903,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1698,Failing tests
+3037616016,Devin,Non-Agentic Failure,https://github.com/GlareDB/glaredb/pull/3765,"My bad, forgot this was implemented. We don't need bespoke docs for this."
+2878399010,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2221,Closing due to inactivity.
+3134478540,Copilot,Agentic Failure,https://github.com/dotnet/diagnostics/pull/5499,We need to come up with a different fix. Closing.
+3071706456,OpenAI_Codex,Unknown,https://github.com/lunary-ai/lunary/pull/969,404
+3118854425,Devin,Unknown,https://github.com/Mooncake-Labs/pg_mooncake/pull/152,
+3263291835,Devin,Agentic Failure,https://github.com/567-labs/instructor/pull/1747,Failing tests
+3221900086,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI-tools/pull/373,due to inactivity
+2866881273,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3941,due to inactivity
+3070073796,OpenAI_Codex,Agentic Failure,https://github.com/commaai/panda/pull/2199,Failing tests
+3245069979,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/709,Failing tests
+3162485837,Copilot,Unknown,https://github.com/dotnet/dotnet-api-docs/pull/11493,
+3070964333,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/702,Failing tests
+3143758141,OpenAI_Codex,Non-Agentic Failure,https://github.com/gofiber/fiber/pull/3518,#3604
+3201769355,Copilot,Non-Agentic Failure,https://github.com/babalae/better-genshin-impact/pull/1831,copilot 你真棒，不采纳，但狠狠的抄了
+2841184790,Devin,Agentic Failure,https://github.com/onlook-dev/onlook/pull/1317,Failing tests
+3169753530,OpenAI_Codex,Unknown,https://github.com/onlook-dev/onlook/pull/2269,
+2859359419,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1424,
+2893208755,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6787,
+3106238975,Devin,Non-Agentic Failure,https://github.com/ComposioHQ/composio/pull/1605,due to inactivity
+3240836795,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/63363,due to inactivity
+2819751239,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1172,
+3245082884,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/725,
+3034517667,Devin,Non-Agentic Failure,https://github.com/schemahero/schemahero/pull/1170,due to inactivity
+3154330497,OpenAI_Codex,Agentic Failure,https://github.com/openai/openai-agents-js/pull/114,Failing tests
+3104375121,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-net/pull/50357,This implementation introduces a breaking change. I'm going to kill the copilot experiment here and adjust the approach by hand
+3170056340,Copilot,Unknown,https://github.com/microsoft/WSL/pull/13180,
+3092840203,OpenAI_Codex,Unknown,https://github.com/ryokun6/ryos/pull/110,
+3251517108,Cursor,Agentic Failure,https://github.com/getkirby/kirby/pull/7415,Failing tests
+3133585449,Devin,Non-Agentic Failure,https://github.com/test-zeus-ai/testzeus-hercules/pull/61,due to inactivity
+3245069878,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/708,
+2825676107,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1210,
+3151429280,OpenAI_Codex,Agentic Failure,https://github.com/featureform/enrichmcp/pull/70,Failing tests
+3197329625,Copilot,Unknown,https://github.com/kanisterio/kanister/pull/3541,
+3184403763,OpenAI_Codex,Unknown,https://github.com/ESPresense/ESPresense/pull/1737,
+2868408082,Devin,Agentic Failure,https://github.com/bentoml/BentoML/pull/5241,Failing tests
+3241826198,OpenAI_Codex,Agentic Failure,https://github.com/openai/codex/pull/1609,Failing tests
+3074574690,OpenAI_Codex,Unknown,https://github.com/langchain-ai/agents-from-scratch/pull/32,
+2887680476,Devin,Agentic Failure,https://github.com/pdfme/pdfme/pull/773,Failing tests
+3071786788,OpenAI_Codex,Unknown,https://github.com/lunary-ai/lunary/pull/974,404
+3186515135,OpenAI_Codex,Agentic Failure,https://github.com/PrismarineJS/minecraft-data/pull/1023,#1024 is better
+2774379409,Devin,Non-Agentic Failure,https://github.com/goat-sdk/goat/pull/199,Closing due to inactivity.
+3098861776,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/19969,Failing tests
+2954534559,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/56441,
+2893535875,Devin,Unknown,https://github.com/pdfme/pdfme/pull/803,
+3095585241,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1939,
+2982065302,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/20624,"thnx for the PR devin, but the other human did it better"
+3201648954,Cursor,Agentic Failure,https://github.com/novuhq/novu/pull/8639,Failing tests
+3266424520,Cursor,Unknown,https://github.com/deepnoodle-ai/risor/pull/409,
+3089545186,OpenAI_Codex,Non-Agentic Failure,https://github.com/mrwadams/stride-gpt/pull/71,Will be addressed by #72
+3147729200,OpenAI_Codex,Agentic Failure,https://github.com/bitcoin/bitcoin/pull/32753,Failing tests
+3155923412,Cursor,Agentic Failure,https://github.com/vercel/ai-chatbot/pull/1058,Failing tests
+3178242104,Copilot,Non-Agentic Failure,https://github.com/owid/owid-grapher/pull/5053,Closing due to inactivity.
+3265505959,OpenAI_Codex,Non-Agentic Failure,https://github.com/ikamensh/flynt/pull/221,"no need to merge, documented this analysis in the issue #106"
+2922222913,Devin,Agentic Failure,https://github.com/pdfme/pdfme/pull/855,Failing tests
+3204659964,OpenAI_Codex,Unknown,https://github.com/bionic-gpt/bionic-gpt/pull/919,
+2990080867,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2592,Closing due to inactivity
+3236326596,Copilot,Non-Agentic Failure,https://github.com/taiga-family/taiga-ui/pull/11348,@copilot I see you later
+3246186580,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/755,
+2877141068,Devin,Unknown,https://github.com/liam-hq/liam/pull/780,
+3141153468,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-js/pull/34800,
+2895019210,Devin,Agentic Failure,https://github.com/trycompai/comp/pull/94,Failing tests
+3147340923,Devin,Agentic Failure,https://github.com/web-infra-dev/rspack/pull/10677,Failing tests
+2870989734,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2201,Closing due to inactivity.
+3219210709,Cursor,Agentic Failure,https://github.com/formbricks/formbricks/pull/6213,Failing tests
+3158584991,Devin,Unknown,https://github.com/liam-hq/liam/pull/2078,
+3179789341,Copilot,Unknown,https://github.com/microsoft/Microsoft365DSC/pull/6229,
+2762054930,Devin,Unknown,https://github.com/bespokelabsai/curator/pull/292,
+3003865817,Devin,Unknown,https://github.com/crewAIInc/crewAI/pull/2639,
+3091868377,OpenAI_Codex,Agentic Failure,https://github.com/netket/netket/pull/2049,Failing tests
+2971334427,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20541,This PR has no issue related issue nor the details are clear
+3189766514,Cursor,Agentic Failure,https://github.com/elizaOS/eliza/pull/5332,Failing tests
+3230529031,Copilot,Non-Agentic Failure,https://github.com/NewFuture/DDNS/pull/524,see #531
+3162624847,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21938,Closing due to inactivity
+3048475288,Devin,Unknown,https://github.com/liam-hq/liam/pull/1622,
+2767960820,Devin,Unknown,https://github.com/lightdash/lightdash/pull/13092,
+2899419096,Devin,Non-Agentic Failure,https://github.com/OneKeyHQ/app-monorepo/pull/6824,Closing this PR as it addressed the wrong component.
+3101409173,OpenAI_Codex,Agentic Failure,https://github.com/skypilot-org/skypilot/pull/5810,Failing tests
+3070999255,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/729,Failing tests
+2895276856,Devin,Non-Agentic Failure,https://github.com/marimo-team/marimo/pull/3976,Closing due to inactivity
+3267605140,Claude_Code,Unknown,https://github.com/graphistry/pygraphistry/pull/716,
+3243477859,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/685,Failing tests
+2947941261,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/56408,Closing due to inactivity
+3242300961,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Svg.Skia/pull/344,Failing tests
+3254423495,OpenAI_Codex,Agentic Failure,https://github.com/stanford-crfm/levanter/pull/1090,Failing tests
+3070953480,OpenAI_Codex,Unknown,https://github.com/julep-ai/julep/pull/1397,
+2822270672,Devin,Agentic Failure,https://github.com/airbytehq/airbyte/pull/52674,Failing tests
+3118419390,OpenAI_Codex,Non-Agentic Failure,https://github.com/spring-projects/spring-kafka/pull/3944,Merged via 85b3aee.
+3083630331,OpenAI_Codex,Agentic Failure,https://github.com/Significant-Gravitas/AutoGPT/pull/10005,This doesn't fix error cases. I have a better fix for this :)
+3072192774,OpenAI_Codex,Unknown,https://github.com/allenai/reward-bench/pull/234,
+3140480772,Copilot,Agentic Failure,https://github.com/microsoft/vstest/pull/15099,That tiny blurb will not save the documentation.
+2866064019,Devin,Unknown,https://github.com/wix/react-native-ui-lib/pull/3523,
+3158776739,Claude_Code,Non-Agentic Failure,https://github.com/Shopify/roast/pull/284,Closing since overlaps richer functionality in #285
+2843334531,Devin,Agentic Failure,https://github.com/promptfoo/promptfoo/pull/3047,Failing tests
+2893951588,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6801,
+2821981350,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1184,
+3098884416,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/19976,"added the test in the wrong folder, real one already exists"
+2792145491,Devin,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/38695,Closing due to inactivity.
+3134390007,Copilot,Unknown,https://github.com/dotnet/sdk/pull/49314,
+3132160698,Copilot,Unknown,https://github.com/microsoft/vscode/pull/251069,
+3234229310,Copilot,Non-Agentic Failure,https://github.com/onnx/onnx/pull/7124,"Closing this, redoing it in #7158"
+3075881390,Copilot,Unknown,https://github.com/microsoft/playwright/pull/36011,
+3227962360,Copilot,Unknown,https://github.com/Azure/bicep-registry-modules/pull/5606,
+3224208030,OpenAI_Codex,Unknown,https://github.com/openai/codex/pull/1545,
+3218973564,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/22379,Closing due to inactivity
+3049445842,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2790,Failing tests
+2934595764,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2422,Closing due to inactivity
+3119705765,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20199,Failing tests
+3116850813,OpenAI_Codex,Non-Agentic Failure,https://github.com/facet-rs/facet/pull/741,"Yeah, doesn't seem worth it atm."
+3179263604,Copilot,Unknown,https://github.com/microsoft/genaiscript/pull/1656,
+2781604779,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6490,
+3096677627,OpenAI_Codex,Unknown,https://github.com/superagent-ai/vibekit/pull/16,
+3161649548,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21933,Closing due to inactivity
+2776790742,Devin,Unknown,https://github.com/OneKeyHQ/app-monorepo/pull/6465,
+3128551483,Copilot,Agentic Failure,https://github.com/microsoft/vscode/pull/250962,Failing tests
+3161708496,Copilot,Non-Agentic Failure,https://github.com/App-vNext/Polly/pull/2657,"I don't understand where this has come from or why, so I'm closing it as there has been zero discussion in advance."It looks to be replicating functionality that already exists downstream from dotnet/extensions.
+3071010253,OpenAI_Codex,Unknown,https://github.com/trycompai/comp/pull/656,
+3098385347,OpenAI_Codex,Agentic Failure,https://github.com/seasonedcc/composable-functions/pull/179,Failing tests
+3265063672,Cursor,Agentic Failure,https://github.com/thirdweb-dev/js/pull/7720,Failing tests
+3086565525,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/21491,Closing due to inactivity
+3245069472,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/707,Failing tests
+2765532800,Devin,Non-Agentic Failure,https://github.com/labring/laf/pull/2038,Closing due to inactivity.
+3234182132,Cursor,Unknown,https://github.com/mostafaalagamy/Metrolist/pull/991,
+3117928238,OpenAI_Codex,Agentic Failure,https://github.com/vllm-project/vllm/pull/19145,
+3071982253,OpenAI_Codex,Agentic Failure,https://github.com/commaai/opendbc/pull/2267,Failing tests
+3257538654,OpenAI_Codex,Unknown,https://github.com/jafioti/luminal/pull/131,
+3225135545,OpenAI_Codex,Agentic Failure,https://github.com/amantus-ai/vibetunnel/pull/324,Failing tests
+2920196599,Devin,Agentic Failure,https://github.com/near/nearcore/pull/13132,Failing tests
+3166339601,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20573,Failing tests
+3225248115,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/656,
+2896371903,Devin,Non-Agentic Failure,https://github.com/pdfme/pdfme/pull/812,duplicated
+3143034989,OpenAI_Codex,Unknown,https://github.com/bionic-gpt/bionic-gpt/pull/823,
+3206405282,Claude_Code,Non-Agentic Failure,https://github.com/fireship-io/flamethrower/pull/96,Closing this PR as it was created without proper consideration. Apologies for the noise.
+3176828879,Cursor,Agentic Failure,https://github.com/getsentry/sentry/pull/94360,Failing tests
+3144417356,Cursor,Agentic Failure,https://github.com/getsentry/sentry/pull/93538,Failing tests
+2885068224,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3990,Closing due to inactivity.
+3275676664,Copilot,Non-Agentic Failure,https://github.com/halo-dev/halo/pull/7645,Duplicates of #7644.
+3216373575,Cursor,Agentic Failure,https://github.com/browser-use/browser-use/pull/2380,Failing tests
+3077887395,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1888,
+2861747083,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3937,Closing due to inactivity.
+3102144371,OpenAI_Codex,Agentic Failure,https://github.com/oven-sh/bun/pull/20058,Failing tests
+2883330678,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3982,Closing due to inactivity.
+3219823665,OpenAI_Codex,Agentic Failure,https://github.com/arthurhenrique/cookiecutter-fastapi/pull/160,1 failing check
+2897533176,Devin,Agentic Failure,https://github.com/trycompai/comp/pull/103,"6 successful, 1 failing, and 1 skipped checks"
+3234480284,Devin,Non-Agentic Failure,https://github.com/liam-hq/liam/pull/2574,"@MH4GF #2596 Sorry in the midst of your review.The policy in this PR does not work well, so we have revised the policy in the PR above.We hope you will continue to review the above PR."
+3115039109,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2944,Closing due to inactivity for more than 7 days.
+3206405036,Claude_Code,Non-Agentic Failure,https://github.com/fireship-io/flamethrower/pull/95,Closing this PR as it was created without proper consideration. Apologies for the noise.
+2782330828,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1031,
+2825991690,Devin,Non-Agentic Failure,https://github.com/promptfoo/promptfoo/pull/2958,Closing due to inactivity.
+2765877627,Devin,Agentic Failure,https://github.com/onlook-dev/onlook/pull/976,1 failing and 1 successful checks
+3136290510,Copilot,Unknown,https://github.com/celestiaorg/celestia-core/pull/1991,
+3211993316,OpenAI_Codex,Unknown,https://github.com/1517005260/graph-rag-agent/pull/30,
+3087399940,Copilot,Non-Agentic Failure,https://github.com/dnnsoftware/Dnn.Platform/pull/6559,"This was just a test of copilot agent mode, I think I'll submit a more proper PR for this later..."
+3228764972,Cursor,Agentic Failure,https://github.com/jdx/mise/pull/5637,"7 failing, 1 successful, and 3 skipped checks"
+2813961093,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/52574,
+3112987044,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2937,Closing due to inactivity for more than 7 days.
+3155310952,Devin,Unknown,https://github.com/liam-hq/liam/pull/2057,
+2771182139,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/993,
+3246272592,Cursor,Agentic Failure,https://github.com/kortix-ai/suna/pull/1019,1 failing and 1 successful checks
+3132171150,Copilot,Non-Agentic Failure,https://github.com/microsoft/vscode/pull/251072,Continues in #251182
+3260776885,Devin,Agentic Failure,https://github.com/antiwork/gumroad/pull/685,"2 failing, 67 successful, and 2 skipped checks"
+3122285142,OpenAI_Codex,Unknown,https://github.com/trycompai/comp/pull/800,
+3070961665,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/699,Quality Gate Failed Quality Gate failed
+3240935078,Cursor,Agentic Failure,https://github.com/TanStack/db/pull/280,"2 failing, 2 successful, and 1 cancelled checks"
+2861793133,Devin,Unknown,https://github.com/different-ai/note-companion/pull/329,
+2964974679,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2512,"Hey, good call. It was done last week in another PR. We can install the latest crewai version and test yourself"
+2903833367,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1559,
+3092347933,OpenAI_Codex,Unknown,https://github.com/Skyvern-AI/skyvern/pull/2475,
+2866186240,Devin,Unknown,https://github.com/antiwork/shortest/pull/351,
+3165098830,Devin,Agentic Failure,https://github.com/antiwork/helper/pull/536,"4 failing, 1 neutral, 1 skipped, and 3 successful checks"
+2804518743,Devin,Non-Agentic Failure,https://github.com/lightdash/lightdash/pull/13374,had a problem deploying to devin/1737552126-fix-issue-2758 - lightdash PR #13374 11 months ago — with  Render Failure
+3265522902,OpenAI_Codex,Unknown,https://github.com/puemos/hls-downloader/pull/427,
+3231408675,Copilot,Non-Agentic Failure,https://github.com/ToolJet/ToolJet/pull/13413,Dummy PR.
+2997203967,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20710,Closing as requested by user to await more detailed instructions.
+2802889835,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/52064,Closing due to inactivity.
+2861673771,Devin,Unknown,https://github.com/different-ai/note-companion/pull/328,
+2859077171,Devin,Unknown,https://github.com/different-ai/note-companion/pull/324,
+3245067419,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/701,
+3148964389,Devin,Unknown,https://github.com/liam-hq/liam/pull/2027,
+3197785109,Cursor,Non-Agentic Failure,https://github.com/getsentry/sentry/pull/94841,beyond my or cursors skill at this problem so I'll give up
+2867739342,Devin,Agentic Failure,https://github.com/bentoml/BentoML/pull/5237,"This doesn't look right, closing it now"
+3267556588,Copilot,Non-Agentic Failure,https://github.com/ublue-os/bluefin/pull/2852,Ok not merging this but totally stealing the donations.md improvements!
+3259892866,Copilot,Unknown,https://github.com/microsoft/genaiscript/pull/1790,
+2889490163,Devin,Unknown,https://github.com/different-ai/note-companion/pull/341,
+3176255193,Cursor,Unknown,https://github.com/grafbase/grafbase/pull/3244,
+3192696250,OpenAI_Codex,Agentic Failure,https://github.com/surrealdb/surrealdb/pull/6146,"36 successful, 1 failing, and 1 skipped checks"
+2915517113,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2354,Closing due to inactivity for more than 7 days.
+3108623918,Copilot,Non-Agentic Failure,https://github.com/Azure-Samples/azure-search-openai-demo/pull/2555,This was a test issue created for a demo of Copilot Coding Agent for a talk. I close it. No need to merge this PR.
+3098854152,OpenAI_Codex,Non-Agentic Failure,https://github.com/oven-sh/bun/pull/19964,superseded by #19995
+3243054866,Copilot,Agentic Failure,https://github.com/microsoft/vscode-pull-request-github/pull/7345,"1 failing, 1 in progress, and 1 successful checks"
+3087404055,OpenAI_Codex,Agentic Failure,https://github.com/prebid/Prebid.js/pull/13156,2 failing and 4 successful checks
+3072128473,OpenAI_Codex,Non-Agentic Failure,https://github.com/sakaiproject/sakai/pull/13754,Going to close for @ern to give this one a stab
+3070165480,OpenAI_Codex,Unknown,https://github.com/Kanaries/graphic-walker/pull/439,
+3116063940,Copilot,Non-Agentic Failure,https://github.com/DaveSkender/Stock.Indicators/pull/1343,Abandoning. Moot with future plans for site
+3067984156,Devin,Non-Agentic Failure,https://github.com/onlook-dev/onlook/pull/1849,Closing due to inactivity for more than 7 days.
+3062241477,Devin,Agentic Failure,https://github.com/vdaas/vald/pull/2964,[FORMAT] Failed to format.
+3261427589,OpenAI_Codex,Agentic Failure,https://github.com/selfxyz/self/pull/786,this doesn't work
+3139420152,Cursor,Agentic Failure,https://github.com/langfuse/langfuse/pull/7266,"21 successful, 2 failing, and 1 skipped checks"
+2852999856,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI-tools/pull/212,Closing due to inactivity.
+3099639511,Copilot,Agentic Failure,https://github.com/dotnet/fsharp/pull/18631,"An unexpected error occurred. For more details, see the detailed logs in GitHub Actions."
+2942219527,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2452,OpenRouter does not support embedding models
+2914474920,Devin,Agentic Failure,https://github.com/antiwork/helper/pull/58,"1 failing, 3 successful, and 1 skipped checks"
+3097709863,Copilot,Non-Agentic Failure,https://github.com/microsoft/vscode/pull/249991,"closing as obsolete, we went with Y and N based keybindings"
+3180830949,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/62108,
+3023133644,Devin,Unknown,https://github.com/crewAIInc/crewAI-tools/pull/291,
+2876464228,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3959,Closing due to inactivity.
+3123070640,OpenAI_Codex,Unknown,https://github.com/BerriAI/litellm/pull/11463,
+3112357523,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1860,Please restore the TODO comment. ---no response
+3273580906,Claude_Code,Unknown,https://github.com/wolfi-dev/os/pull/61007,
+3067033881,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21343,"18 successful, 17 skipped, 1 failing, and 1 neutral checks"
+3101062864,OpenAI_Codex,Non-Agentic Failure,https://github.com/metacraft-labs/codetracer/pull/148,"closing, superseded by #164"
+2923118690,Devin,Unknown,https://github.com/wix/react-native-ui-lib/pull/3623,
+3055717125,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1657,17 successful and 2 failing checks
+3112628847,Devin,Agentic Failure,https://github.com/liam-hq/liam/pull/1865,6 failing and 12 successful checks
+3131240866,OpenAI_Codex,Unknown,https://github.com/onlook-dev/onlook/pull/2123,
+3098414087,OpenAI_Codex,Agentic Failure,https://github.com/CapSoftware/Cap/pull/577,3 successful and 3 failing checks
+3114628181,Devin,Unknown,https://github.com/airbytehq/airbyte/pull/61343,
+3067985764,Devin,Non-Agentic Failure,https://github.com/onlook-dev/onlook/pull/1850,This pull request has been ignored for the connected project wowaemfasoptxrdjhilu because there are no changes detected in apps/backend/supabase directory.
+3070903361,OpenAI_Codex,Non-Agentic Failure,https://github.com/modular/modular/pull/4615,the branch is stale since I forgot about it. let me retry in a new branch
+2921483450,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55778,Closing due to inactivity for more than 7 days.
+3209703127,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1655,@mattkur - definitely not what you had in mind...
+3086740486,OpenAI_Codex,Unknown,https://github.com/dropseed/plain/pull/34,
+3260461026,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/805,"7 failing, 5 successful, and 2 cancelled checks"
+3081523540,OpenAI_Codex,Agentic Failure,https://github.com/beyond-all-reason/Beyond-All-Reason/pull/5134,"Closing due to time waste trying to fix ws bug, will revisit later"
+2847298223,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2103,1 failing and 3 successful checks
+3115965598,Devin,Unknown,https://github.com/liam-hq/liam/pull/1874,
+3021098408,Devin,Agentic Failure,https://github.com/antiwork/flexile/pull/205,Resolve merge conflicts
+2949664347,Devin,Agentic Failure,https://github.com/cornerstonejs/cornerstone3D/pull/1939,❌ Deploy Preview for cornerstone-3d-docs failed.
+3125968003,OpenAI_Codex,Agentic Failure,https://github.com/prebid/Prebid.js/pull/13306,5 successful and 1 failing checks
+3164391666,Copilot,Agentic Failure,https://github.com/Z3Prover/z3/pull/7689,this is not a valid fix
+2923130106,Devin,Agentic Failure,https://github.com/wix/react-native-ui-lib/pull/3626,1 failing check
+3196745111,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/22221,Closing due to inactivity for more than 7 days. Configure here.
+3127422033,OpenAI_Codex,Agentic Failure,https://github.com/leoafarias/fvm/pull/869,"9 failing, 2 cancelled, and 6 successful checks"
+3029752398,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/59155,Closing due to inactivity for more than 7 days.
+2898666158,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2289,Closing due to inactivity for more than 7 days.
+2849418286,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3927,Closing due to inactivity.
+2763678225,Devin,Agentic Failure,https://github.com/crewAIInc/crewAI/pull/1827,1 failing and 3 successful checks @github-actions
+3082132239,Copilot,Unknown,https://github.com/microsoft/azurelinux/pull/13859,
+3246170574,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/749,
+3169219154,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/3050,Closing due to inactivity for more than 7 days. Configure here.
+3160932333,Copilot,Agentic Failure,https://github.com/dotnet/roslyn/pull/79057,Nope. This fix is terrible.
+3189792652,Cursor,Agentic Failure,https://github.com/elizaOS/eliza/pull/5333,8 failing and 3 successful checks
+3258945821,Claude_Code,Unknown,https://github.com/aws-samples/generative-ai-use-cases/pull/1193,
+3135084964,OpenAI_Codex,Non-Agentic Failure,https://github.com/bruin-data/bruin/pull/760,Closing this as we'll handle it as part of another ticket.
+2971152602,Devin,Non-Agentic Failure,https://github.com/calcom/cal.com/pull/20538,Closing due to inactivity for more than 7 days.
+3169212086,Copilot,Non-Agentic Failure,https://github.com/microsoft/retina/pull/1704,Signed PR: #1783
+3101326488,Devin,Agentic Failure,https://github.com/lingodotdev/lingo.dev/pull/820,1 failing and 1 successful checks
+2939327802,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2439,Closing due to inactivity for more than 7 days.
+3239103350,Cursor,Unknown,https://github.com/kortix-ai/suna/pull/974,
+3156291643,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/3027,Closing due to inactivity for more than 7 days. Configure here.
+3123401020,OpenAI_Codex,Unknown,https://github.com/Doriandarko/deepseek-engineer/pull/15,
+3246169042,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Svg.Skia/pull/382,"11 failing, 5 successful, and 2 cancelled checks"
+2771536472,Devin,Unknown,https://github.com/bespokelabsai/curator/pull/304,
+2982953659,Devin,Non-Agentic Failure,https://github.com/near/nearcore/pull/13339,Closing due to inactivity for more than 7 days.
+3130515409,OpenAI_Codex,Agentic Failure,https://github.com/fireproof-storage/fireproof/pull/867,"2 failing, 10 skipped, and 3 successful checks"
+3018439207,Devin,Unknown,https://github.com/calcom/cal.com/pull/20962,
+2918417155,Devin,Non-Agentic Failure,https://github.com/BasedHardware/omi/pull/2006,Closing in favor of PR #2009 which has a better implementation
+3234207351,Devin,Unknown,https://github.com/liam-hq/liam/pull/2570,
+3134963182,OpenAI_Codex,Agentic Failure,https://github.com/jafioti/luminal/pull/103,2 successful and 1 failing checks
+3164787820,OpenAI_Codex,Non-Agentic Failure,https://github.com/openai/openai-agents-js/pull/135,This PR was closed because it has been inactive for 7 days since being marked as stale.
+3155023758,OpenAI_Codex,Agentic Failure,https://github.com/pytorch/pytorch/pull/156255,"1 skipped, 139 successful, 2 failing, and 1 neutral checks"
+3077094653,Copilot,Agentic Failure,https://github.com/tokens-studio/figma-plugin/pull/3360,"There's some failing checks, can you get them to pass?"
+2780647811,Devin,Non-Agentic Failure,https://github.com/whitphx/stlite/pull/1245,Closing due to inactivity.
+3120941664,OpenAI_Codex,Unknown,https://github.com/ckan/ckan/pull/8986,
+3209647114,Copilot,Agentic Failure,https://github.com/microsoft/openvmm/pull/1653,"Yikes, not happy with this one."
+2817109062,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3877,Closing due to inactivity.
+3226217517,Copilot,Agentic Failure,https://github.com/clash-verge-rev/clash-verge-rev/pull/4047,Do you think this PR will help reduce your workload in advance? I would assist with the preliminary work. --probably not
+2903812633,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/55255,Closing due to inactivity for more than 7 days.
+3077283376,OpenAI_Codex,Non-Agentic Failure,https://github.com/seasonedcc/remix-forms/pull/306,Closing in favor of #308
+3039633986,Devin,Non-Agentic Failure,https://github.com/antiwork/helper/pull/377,"Not feasible until we have a local auth solution, and I'm no longer convinced this is the best idea (the whole Supabase stack works well together and awkwardly otherwise, e.g. auth only works with Supabase Auth) Needs more thought"
+2861748481,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3938,Closing due to inactivity.
+3136072840,Copilot,Unknown,https://github.com/microsoft/react-native-windows/pull/14769,
+3030779808,Devin,Unknown,https://github.com/tegnike/aituber-kit/pull/376,
+3135999700,Copilot,Unknown,https://github.com/dotnet/aspire/pull/9823,
+3159464933,Copilot,Unknown,https://github.com/microsoft/playwright-mcp/pull/572,
+3070962378,OpenAI_Codex,Unknown,https://github.com/julep-ai/julep/pull/1401,
+3213717486,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/579,
+3236327722,Copilot,Unknown,https://github.com/taiga-family/taiga-ui/pull/11349,
+3077315151,OpenAI_Codex,Non-Agentic Failure,https://github.com/openai/codex/pull/1050,"Gonna abandon, I let this get really stale."
+3070474086,OpenAI_Codex,Agentic Failure,https://github.com/tact-lang/tact/pull/3095,15 successful and 9 failing checks @github-actions
+3078529665,Copilot,Agentic Failure,https://github.com/dotnet/aspnetcore/pull/62041,"I was hoping that Copilot could handle this fairly ""boring"" task of mapping an implementation that used static analysis to an implementation that used dynamic analysis but it looks like the task is too large for the session limitations enforced by Copilot. :/"
+3125195166,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21726,"21 successful, 17 skipped, 1 failing, and 1 neutral checks"
+3070996825,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/713,2 failing and 8 successful checks
+3122747306,Copilot,Agentic Failure,https://github.com/Azure/azure-sdk-for-js/pull/34713,Try again --probably did not work
+3125682958,Copilot,Agentic Failure,https://github.com/microsoft/vscode/pull/250894,"@copilot the completions already work for code-tunnel.exe and other .exe. However, the detail property is not provided"
+3070996871,OpenAI_Codex,Agentic Failure,https://github.com/OpenHFT/Chronicle-Core/pull/715,2 failing and 8 successful checks
+3132430389,Devin,Unknown,https://github.com/liam-hq/liam/pull/1965,
+2894762370,Claude_Code,Agentic Failure,https://github.com/567-labs/instructor/pull/1371,"5 failing, 4 successful, and 7 cancelled checks @github-actions"
+3106783403,Devin,Non-Agentic Failure,https://github.com/triggerdotdev/trigger.dev/pull/2133,Testing
+3193608588,OpenAI_Codex,Agentic Failure,https://github.com/wieslawsoltes/Dock/pull/476,"7 failing, 4 successful, 2 cancelled, and 1 neutral checks"
+3152808680,OpenAI_Codex,Agentic Failure,https://github.com/elixir-lsp/elixir-ls/pull/1199,29 successful and 3 failing checks
+3077311015,Copilot,Unknown,https://github.com/microsoft/azure-pipelines-tasks/pull/21038,
+2814535457,Devin,Non-Agentic Failure,https://github.com/box/box-ui-elements/pull/3873,Closing due to inactivity.
+3056316834,Devin,Agentic Failure,https://github.com/formancehq/ledger/pull/909,"3 skipped, 3 successful, and 2 failing checks @github-actions"
+3242573009,OpenAI_Codex,Non-Agentic Failure,https://github.com/imba/imba/pull/909,"Codex did not have access to the imba.io repo, will try again while it has."
+3050185194,Devin,Non-Agentic Failure,https://github.com/airbytehq/airbyte/pull/59733,Just a test. Please disregard.
+3218555468,OpenAI_Codex,Agentic Failure,https://github.com/featureform/enrichmcp/pull/121,"2 failing, 2 cancelled, and 1 skipped checks"
+2843181529,Devin,Agentic Failure,https://github.com/promptfoo/promptfoo/pull/3045,STAHP
+3185789444,Cursor,Unknown,https://github.com/novuhq/novu/pull/8605,
+3203675489,OpenAI_Codex,Agentic Failure,https://github.com/567-labs/instructor/pull/1650,"2 failing, 1 skipped, and 14 successful checks"
+3070258467,OpenAI_Codex,Non-Agentic Failure,https://github.com/appsmithorg/appsmith/pull/40674,This PR has been closed because of inactivity.
+3052823757,Devin,Unknown,https://github.com/yamadashy/repomix/pull/536,
+3228763432,Cursor,Agentic Failure,https://github.com/jdx/mise/pull/5635,too many changes
+3075141911,OpenAI_Codex,Agentic Failure,https://github.com/EduardoPires/EquinoxProject/pull/211,1 failing check
+3053325093,Devin,Agentic Failure,https://github.com/calcom/cal.com/pull/21217,Closing this PR as requested. The approach focused too much on making tests pass rather than properly optimizing the .tz() calls in loops.
+3070088687,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1859,
+3115694514,OpenAI_Codex,Non-Agentic Failure,https://github.com/recallnet/js-recall/pull/494,"gonna close this out, but feel free to re-open if we figure out the auth"
+3273160834,Copilot,Non-Agentic Failure,https://github.com/bugsink/bugsink/pull/171,Closing this; I've learned a bit more about setting up the copilot env. Let's see if a fresh try (with new instructions and env) will be better.
+2895789917,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2283,Closing due to inactivity for more than 7 days.
+2889243475,Devin,Unknown,https://github.com/onlook-dev/onlook/pull/1501,
+3127516559,OpenAI_Codex,Unknown,https://github.com/joamag/boytacean/pull/17,
+3155893392,OpenAI_Codex,Non-Agentic Failure,https://github.com/Portkey-AI/gateway/pull/1149,"Hey! Closing this PR as we have already added requiredMetadataKeys plugin in #1147 . We can extend the same plugin for any new functionality, if requested by the community."
+2881814219,Devin,Agentic Failure,https://github.com/wix/react-native-ui-lib/pull/3534,1 failing check
+3219381363,OpenAI_Codex,Unknown,https://github.com/wieslawsoltes/Dock/pull/605,
+3121717297,Devin,Agentic Failure,https://github.com/novuhq/novu/pull/8462,"16 successful, 6 skipped, 1 failing, and 3 neutral checks"
+3051320539,Devin,Non-Agentic Failure,https://github.com/crewAIInc/crewAI/pull/2799,Closing due to inactivity for more than 7 days.
+2936530524,Devin,Non-Agentic Failure,https://github.com/near/nearcore/pull/13174,Closing in favor of #13203
+3114736501,OpenAI_Codex,Agentic Failure,https://github.com/temporalio/temporal/pull/7860,2 failing checks
+2889227305,Devin,Non-Agentic Failure,https://github.com/antiwork/helper/pull/1,(testing Devin works)
+3159385903,OpenAI_Codex,Unknown,https://github.com/gridaco/grida/pull/391,
+3136476031,Devin,Agentic Failure,https://github.com/antiwork/gumroad/pull/316,Not much I can re-use here; created #343
+3226153741,Devin,Unknown,https://github.com/PromtEngineer/localGPT/pull/845,
+3081839872,OpenAI_Codex,Agentic Failure,https://github.com/pydata/pandas-datareader/pull/1003,11 failing checks
