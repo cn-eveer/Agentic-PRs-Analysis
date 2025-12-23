@@ -1,6 +1,6 @@
 # Agentic-PRs-Analysis
 
-**Repository for replication of our studies of _“Why Are Agentic Pull Requests Accepted or Rejected? An Empirical Study”_.** :contentReference[oaicite:0]{index=0}
+**Repository for replication of our studies of _“Why Are Agentic Pull Requests Accepted or Rejected? An Empirical Study”_.**
 
 This project contains the data and scripts used for analyzing agentic pull requests on GitHub — that is, pull requests created or assisted by autonomous coding agents.
 
