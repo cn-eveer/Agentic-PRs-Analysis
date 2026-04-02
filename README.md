@@ -1,9 +1,3 @@
-Below is a **clean, research-grade README rewrite** that matches your actual repo structure, MSR context, and replication expectations. It is concise, reproducible, and paper-aligned.
-
-You can paste it directly into `README.md`.
-
----
-
 # Agentic-PRs-Analysis
 
 **Replication repository for the study
