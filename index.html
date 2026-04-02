@@ -132,7 +132,7 @@ function DesktopPoster(){
     ),
     // STAT RIBBON
     e("div",{style:{display:"grid",gridTemplateColumns:"repeat(5,1fr)",background:C.card,borderBottom:`1.5px solid ${C.sandD}`}},
-      ...[{v:"11,048",l:"Closed PRs",c:C.navy},{v:"9,799",l:"Human-reviewed",c:C.sage},{v:"717",l:"Manually coded",c:C.wine},{v:"35.7%",l:"Rej. = agent fail",c:C.AF},{v:"15.4%",l:"Merges = human",c:C.FL}].map((s,i)=>
+      ...[{v:"11,048",l:"Closed PRs",c:C.navy},{v:"9,799",l:"Human-reviewed",c:C.sage},{v:"717",l:"Manually coded",c:C.wine},{v:"35.7%",l:"Rejection = agent fail",c:C.AF},{v:"15.4%",l:"Merges = human",c:C.FL}].map((s,i)=>
         e("div",{key:i,style:{textAlign:"center",padding:"9px 4px",borderRight:i<4?`1px solid ${C.sandD}`:"none",background:`${s.c}06`}},
           e("div",{style:{fontSize:22,fontWeight:800,color:s.c,lineHeight:1}},s.v),
           e("div",{style:{fontSize:10,color:C.slate,marginTop:2}},s.l)))
@@ -234,7 +234,7 @@ function DesktopPoster(){
               e("line",{x1:6,y1:95,x2:254,y2:95,stroke:C.sandD,strokeWidth:1,strokeDasharray:"4 3"}),
               e("text",{x:65,y:186,textAnchor:"middle",fontSize:9,fill:C.slate,fontFamily:sf},"Workflow-heavy"),
               e("text",{x:195,y:186,textAnchor:"middle",fontSize:9,fill:C.slate,fontFamily:sf},"Minimal interaction"),
-              e("text",{x:255,y:12,textAnchor:"end",fontSize:9,fill:C.slate,fontFamily:sf},"↑ More rej."),
+              e("text",{x:255,y:12,textAnchor:"end",fontSize:9,fill:C.slate,fontFamily:sf},"↑ More rejection"),
               e("text",{x:255,y:92,textAnchor:"end",fontSize:9,fill:C.slate,fontFamily:sf},"↓ More merges"),
               ...[{x:65,y:50,r:26,l:"Devin",c:C.devin},{x:50,y:120,r:19,l:"Copilot",c:C.copilot},{x:200,y:52,r:28,l:"Codex",c:C.codex},{x:195,y:125,r:15,l:"Cursor",c:C.cursor},{x:128,y:82,r:10,l:"Claude",c:C.claude}].flatMap(b=>[
                 e("circle",{key:"c"+b.l,cx:b.x,cy:b.y,r:b.r,fill:`${b.c}30`,stroke:b.c,strokeWidth:1.5}),
@@ -322,6 +322,51 @@ function MobilePoster(){
             e("div",{style:{minWidth:30,height:30,borderRadius:6,background:r.c,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800}},r.rq),
             e("div",{style:{fontSize:13,fontWeight:700,color:C.navy,lineHeight:1.3}},r.q)))
       ),
+
+    // Study Pipeline
+    e(Sec,{title:"Study Pipeline",accent:C.sage,mob:true,sub:"We built on the AIDev dataset, restricting scope to closed Agentic-PRs in repositories with ≥500 stars, then applied stratified sampling and manual qualitative coding."},
+      e("svg",{width:"70%",viewBox:"0 0 240 290",style:{display:"flex", textAlign:"center",margin:"0 auto"}},
+        e("defs",null,e("marker",{id:"ar-m",viewBox:"0 0 10 10",refX:8,refY:5,markerWidth:5,markerHeight:5,orient:"auto"},
+          e("path",{d:"M2 2L8 5L2 8",fill:"none",stroke:C.slate,strokeWidth:1.5,strokeLinecap:"round",strokeLinejoin:"round"}))),
+        ...[{y:0,t:"AIDev Dataset",s:"Closed PRs · ≥500★",c:C.sage,n:"11,048"},
+          {y:74,t:"Human Review Filter",s:"Remove bot-only",c:C.sage,n:"9,799"},
+          {y:148,t:"Stratified Sampling",s:"Balanced per agent",c:C.amber,n:"717"},
+          {y:222,t:"Manual Coding",s:"2 coders · κ ≈ 0.90",c:C.wine,n:"coded"}].flatMap((s,i)=>[
+          e("rect",{key:"r"+i,x:0,y:s.y,width:196,height:54,rx:8,fill:`${s.c}12`,stroke:s.c,strokeWidth:1.2}),
+          e("text",{key:"t"+i,x:10,y:s.y+23,fontSize:13,fontWeight:700,fill:C.navy,fontFamily:sf},s.t),
+          e("text",{key:"s"+i,x:10,y:s.y+40,fontSize:10,fill:C.slate,fontFamily:sf},s.s),
+          e("rect",{key:"b"+i,x:202,y:s.y+11,width:36,height:32,rx:6,fill:s.c}),
+          e("text",{key:"n"+i,x:220,y:s.y+31,fontSize:10,fontWeight:700,fill:"#fff",textAnchor:"middle",fontFamily:sf},s.n),
+          i<3 ? e("line",{key:"l"+i,x1:98,y1:s.y+54,x2:98,y2:s.y+74,stroke:C.slate,strokeWidth:1.2,markerEnd:"url(#ar-m)"}) : null
+        ].filter(Boolean))
+      )),
+
+    // Dataset
+    e(Sec,{title:"Dataset",accent:C.sage,mob:true,sub:"The refined dataset contains 9,799 human-reviewed Agentic-PRs. OpenAI Codex and Devin together account for the majority of submissions."},
+      e("div",{style:{width:"100%",display:"flex",gap:10,justifyContent:"center",alignItems:"center",marginBottom:8}},
+        e(Waffle,{value:6179,total:9799,color:C.sage,size:7}),
+        e("div",null,
+          e("div",{style:{display:"flex",alignItems:"center",gap:4,marginBottom:3,fontSize:12,fontWeight:700}},
+            e("div",{style:{width:11,height:11,borderRadius:2,background:C.sage}})," 63% Merged (6,179)"),
+          e("div",{style:{display:"flex",alignItems:"center",gap:4,fontSize:12,fontWeight:700}},
+            e("div",{style:{width:11,height:11,borderRadius:2,background:"#ddd9d0"}})," 37% Rejected (3,620)")
+        )
+      ),
+      ...[{a:"Codex",p:40.7,c:C.codex},{a:"Devin",p:34.5,c:C.devin},{a:"Copilot",p:14.6,c:C.copilot},{a:"Cursor",p:8.0,c:C.cursor},{a:"Claude",p:2.2,c:C.claude}].map(d=>
+        e("div",{key:d.a,style:{display:"flex",alignItems:"center",gap:5,marginBottom:4}},
+          e("span",{style:{fontSize:11,fontWeight:600,color:C.navy,width:48,textAlign:"right"}},d.a),
+          e("div",{style:{flex:1,height:16,background:"#e5e7eb",borderRadius:8,overflow:"hidden"}},
+            e("div",{style:{width:`${Math.max(d.p*2.2,8)}%`,height:"100%",background:d.c,borderRadius:8,display:"flex",alignItems:"center",justifyContent:"flex-end",paddingRight:4}},
+              d.p>5?e("span",{style:{fontSize:9,fontWeight:700,color:"#fff"}},d.p+"%"):null)),
+          d.p<=5?e("span",{style:{fontSize:9,color:C.slate}},d.p+"%"):null)),
+      e("div",{style:{display:"flex",gap:6}},
+            ...[{l:"RQ1 (Rejection)",v:"κ ≈ 0.90"},{l:"RQ2 (Merge)",v:"κ = 1.00"}].map(k=>
+              e("div",{key:k.l,style:{flex:1,background:C.navyL,borderRadius:6,padding:"7px 8px",textAlign:"center"}},
+                e("div",{style:{fontSize:18,fontWeight:800,color:C.navy}},k.v),
+                e("div",{style:{fontSize:10,color:C.slate,marginTop:1}},k.l))))
+
+        ),
+
       // RQ1
       e(RQBlock,{
         title:"RQ1 — Rejection Drivers",accent:C.AF,
@@ -342,6 +387,14 @@ function MobilePoster(){
         barData:merB,barMap:r=>[{v:r.FL,c:C.FL},{v:r.HI,c:C.HI},{v:r.NF,c:C.NoFL},{v:r.U,c:C.UnkM}],
         calloutText:"Copilot & Devin = 54/56 human-involved merges."
       }),
+
+      // Discussion
+      e("div",{style:{background:`${C.amber}08`,border:`1.5px solid ${C.amber}30`,borderRadius:8,padding:"10px 12px",marginBottom:12}},
+        e("div",{style:{fontSize:13,fontWeight:800,color:C.amber,textTransform:"uppercase",letterSpacing:0.5,marginBottom:4}},"Discussion"),
+        e("div",{style:{fontSize:12,color:C.navy,lineHeight:1.5}},
+          "Observed Agentic-PR outcomes reflect both agent behavior and the review environments in which agents are deployed. Copilot and Devin were more often embedded in workflow-heavy repositories with stricter CI gating and iterative review norms, while Codex and Cursor appeared in contexts favoring minimal-review merges. Silent closures (33.1% of rejections) represent irreducible uncertainty.")
+      ),
+
       // Cross-agent
       e(Sec,{title:"Cross-Agent Map",accent:C.HI,mob:true,sub:"Agents differ by interaction intensity and deployment context."},
         e("svg",{width:"100%",viewBox:"0 0 260 190",style:{display:"block"}},
@@ -350,6 +403,8 @@ function MobilePoster(){
           e("line",{x1:6,y1:95,x2:254,y2:95,stroke:C.sandD,strokeWidth:1,strokeDasharray:"4 3"}),
           e("text",{x:65,y:186,textAnchor:"middle",fontSize:9,fill:C.slate,fontFamily:sf},"Workflow-heavy"),
           e("text",{x:195,y:186,textAnchor:"middle",fontSize:9,fill:C.slate,fontFamily:sf},"Minimal interaction"),
+          e("text",{x:255,y:92,textAnchor:"end",fontSize:9,fill:C.slate,fontFamily:sf},"↑ More rejection"),
+          e("text",{x:255,y:102,textAnchor:"end",fontSize:9,fill:C.slate,fontFamily:sf},"↓ More merges"),
           ...[{x:65,y:50,r:26,l:"Devin",c:C.devin},{x:50,y:120,r:19,l:"Copilot",c:C.copilot},{x:200,y:52,r:28,l:"Codex",c:C.codex},{x:195,y:125,r:15,l:"Cursor",c:C.cursor},{x:128,y:82,r:10,l:"Claude",c:C.claude}].flatMap(b=>[
             e("circle",{key:"c"+b.l,cx:b.x,cy:b.y,r:b.r,fill:`${b.c}30`,stroke:b.c,strokeWidth:1.5}),
             e("text",{key:"t"+b.l,x:b.x,y:b.y+(b.r>14?4:3),textAnchor:"middle",fontSize:b.r>14?10:8,fontWeight:700,fill:C.navy,fontFamily:sf},b.l)])),
@@ -368,11 +423,11 @@ function MobilePoster(){
             e("p",{style:{fontSize:12,color:C.navy,margin:0,lineHeight:1.4,fontWeight:600}},c.t)))
       ),
       // Future work
-      e(Sec,{title:"Future Work",accent:C.sage,mob:true},
-        e("div",{style:{display:"flex",gap:5,flexWrap:"wrap"}},
-          ...["Automate workflow-closure detection","Interaction-aware benchmarks","Scale with curated ground truth"].map((t,i)=>
-            e("div",{key:i,style:{background:C.sageL,borderRadius:14,padding:"5px 11px",fontSize:11,fontWeight:600,color:C.sage,border:`1px solid ${C.sage}40`}},t)))
-      ),
+      e(Sec,{title:"Future Work",accent:C.sage,sub:"Leverage manually curated ground truth to automate detection of workflow-driven closures, reviewer intervention, and feedback loops at scale."},
+            e("div",{style:{display:"flex",gap:5,flexWrap:"wrap"}},
+              ...["Automate workflow-closure detection","Interaction-aware benchmarks","Scale with curated ground truth","Cross-repo generalization"].map((t,i)=>
+                e("div",{key:i,style:{background:C.sageL,borderRadius:14,padding:"5px 11px",fontSize:11,fontWeight:600,color:C.sage,border:`1px solid ${C.sage}40`}},t))))
+      ,
       // Replication
       e("div",{style:{background:C.navy,borderRadius:8,padding:"12px 14px",color:"#fff",marginTop:4}},
         e("div",{style:{fontSize:13,fontWeight:700,marginBottom:2}},"Replication Package"),
