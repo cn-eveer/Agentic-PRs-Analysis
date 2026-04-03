@@ -1,376 +1,1598 @@
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MSR '26 Poster — Compact Desktop Version</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 100%; background: #e8e4dc; display: flex; justify-content: center; padding: 10px; font-family: 'Segoe UI','Helvetica Neue',Arial,sans-serif; }
-  #root { width: 841px;}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    width: 100%;
+    background: #e8e4dc;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  #root {
+    width: 841px;
+  }
   @media print {
-    body { padding: 0; background: #fff; }
-    @page { width: 841px; height:1189px; margin: 2px; }
+    body {
+      padding: 0;
+      background: #fff;
+    }
+    @page {
+      width: 841px;
+      height: 1192px;
+      margin: 0px;
+    }
   }
 </style>
 <div id="root"></div>
 <script>
-const e = React.createElement;
-const PID = "XX";
-const sf = "'Segoe UI','Helvetica Neue',Arial,sans-serif";
-const C = {
-  wine:"#6b2d3e", wineL:"#f5eaed", sage:"#3d6b5e", sageL:"#e4efe9",
-  navy:"#2c3e5a", navyL:"#e8ecf1", amber:"#b8860b",
-  slate:"#5a6577", sand:"#f5f2ec", sandD:"#ddd7ce", card:"#fff",
-  AF:"#9e3a4a", NonAF:"#c9873e", Unk:"#9ca3af",
-  FL:"#3a6e9e", HI:"#7c5ca3", NoFL:"#4a8c6e", UnkM:"#bfc5cc",
-  codex:"#5b8abf", devin:"#7c5ca3", copilot:"#c9873e", cursor:"#4a8c6e", claude:"#9e3a4a",
-};
+  const e = React.createElement;
+  const PID = "XX";
+  const sf = "'Segoe UI','Helvetica Neue',Arial,sans-serif";
+  const C = {
+    wine: "#6b2d3e",
+    wineL: "#f5eaed",
+    sage: "#3d6b5e",
+    sageL: "#e4efe9",
+    navy: "#2c3e5a",
+    navyL: "#e8ecf1",
+    amber: "#b8860b",
+    slate: "#5a6577",
+    sand: "#f5f2ec",
+    sandD: "#ddd7ce",
+    card: "#fff",
+    AF: "#9e3a4a",
+    NonAF: "#c9873e",
+    Unk: "#9ca3af",
+    FL: "#3a6e9e",
+    HI: "#7c5ca3",
+    NoFL: "#4a8c6e",
+    UnkM: "#bfc5cc",
+    codex: "#5b8abf",
+    devin: "#7c5ca3",
+    copilot: "#c9873e",
+    cursor: "#4a8c6e",
+    claude: "#9e3a4a",
+  };
 
-const rejB = [
-  {a:"Claude Code",AF:1,N:4,U:3,t:8},
-  {a:"Copilot",AF:19,N:17,U:21,t:57},
-  {a:"Cursor",AF:15,N:1,U:6,t:22},
-  {a:"Devin",AF:37,N:69,U:47,t:153},
-  {a:"Codex",AF:54,N:19,U:40,t:113},
-];
-const merB = [
-  {a:"Claude Code",FL:0,HI:0,NF:8,U:0,t:8},
-  {a:"Copilot",FL:13,HI:16,NF:11,U:9,t:49},
-  {a:"Cursor",FL:1,HI:0,NF:30,U:2,t:33},
-  {a:"Devin",FL:14,HI:11,NF:74,U:8,t:107},
-  {a:"Codex",FL:0,HI:1,NF:165,U:1,t:167},
-];
-
-function Donut({data,size=120,thick=22,center,sub}) {
-  const r=(size-thick)/2, cx=size/2, cy=size/2;
-  const tot=data.reduce((s,d)=>s+d.v,0), circ=2*Math.PI*r;
-  let cum=0;
-  return e("svg",{width:size,height:size,viewBox:`0 0 ${size} ${size}`,style:{display:"block",flexShrink:0}},
-    ...data.map((d,i)=>{
-      const pct=d.v/tot, dash=pct*circ, off=-(cum/tot)*circ;
-      cum+=d.v;
-      return e("circle",{key:i,cx,cy,r,fill:"none",stroke:d.c,strokeWidth:thick,strokeDasharray:`${dash} ${circ-dash}`,strokeDashoffset:off,transform:`rotate(-90 ${cx} ${cy})`});
-    }),
-    e("text",{x:cx,y:cy-2,textAnchor:"middle",fontSize:size*0.18,fontWeight:800,fill:C.navy,fontFamily:sf},center),
-    sub && e("text",{x:cx,y:cy+size*0.1,textAnchor:"middle",fontSize:size*0.075,fill:C.slate,fontFamily:sf},sub)
-  );
-}
-
-function HBar({items,total,h=18,label}) {
-  return e("div",{style:{marginBottom:4}},
-    e("div",{style:{display:"flex",justifyContent:"space-between",fontSize:10.5,marginBottom:2,fontFamily:sf}},
-      e("span",{style:{fontWeight:700,color:C.navy}},label),
-      e("span",{style:{color:C.slate}},`n=${total}`)
-    ),
-    e("div",{style:{display:"flex",height:h,borderRadius:h/2,overflow:"hidden",background:"#e5e7eb"}},
-      ...items.map((it,i)=>{
-        const w=(it.v/total)*100;
-        if(!w) return null;
-        return e("div",{key:i,style:{width:w+"%",background:it.c,display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,color:"#fff",fontWeight:700}},w>15?Math.round(w)+"%":"");
-      })
-    )
-  );
-}
-
-function Waffle({value,total,color,size=7,cols=10}) {
-  const filled=Math.round((value/total)*25);
-  return e("div",{style:{display:"flex",flexWrap:"wrap",width:cols*(size+2),gap:2}},
-    ...Array.from({length:25},(_,i)=>e("div",{key:i,style:{width:size,height:size,borderRadius:1.5,background:i<filled?color:"#ddd9d0"}}))
-  );
-}
-
-function Sec({title,sub,accent=C.wine,children}) {
-  return e("div",null,
-    e("div",{style:{fontSize:14.5,fontWeight:800,color:accent,textTransform:"uppercase",letterSpacing:0.7,borderBottom:`2px solid ${accent}`,paddingBottom:2,marginBottom:sub?2:5}},title),
-    sub && e("div",{style:{fontSize:11.2,color:"#444",lineHeight:1.35,marginBottom:5}},sub),
-    children
-  );
-}
-
-function Leg({items}) {
-  return e("div",{style:{display:"flex",gap:6,flexWrap:"wrap",marginBottom:4}},
-    ...items.map(item => e("div",{key:item.l,style:{display:"flex",alignItems:"center",gap:4,fontSize:10.2,fontFamily:sf}},
-      e("div",{style:{width:10,height:10,borderRadius:2,background:item.c}}),
-      e("strong",null,item.v),
-      e("span",{style:{color:C.slate}},item.l)
-    ))
-  );
-}
-
-function MiniCards({items}) {
-  return e("div",{style:{display:"flex",gap:4,marginTop:4}},
-    ...items.map(x => e("div",{key:x.l,style:{flex:1,background:`${x.c}0c`,borderRadius:6,padding:"4px 3px",textAlign:"center"}},
-      e("div",{style:{fontSize:13}},x.icon),
-      e("div",{style:{fontSize:15,fontWeight:800,color:x.c,lineHeight:1.1}},x.n),
-      e("div",{style:{fontSize:8,color:C.slate,lineHeight:1.2}},x.l)
-    ))
-  );
-}
-
-function BulletPills({items,color}) {
-  return e("div",{style:{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:4}},
-    ...items.map((t,i)=>e("div",{key:i,style:{background:`${color}12`,border:`1px solid ${color}24`,borderRadius:6,padding:"5px 6px",fontSize:9.2,fontWeight:700,color:color,lineHeight:1.25,textAlign:"center"}},t))
-  );
-}
-
-function Callout({text,color}) {
-  return e("div",{style:{background:`${color}0d`,borderLeft:`3px solid ${color}`,borderRadius:"0 6px 6px 0",padding:"6px 8px",marginTop:5}},
-    e("div",{style:{fontSize:10.5,fontWeight:700,color:color,lineHeight:1.3}},text)
-  );
-}
-
-function StatRibbon() {
-  const stats = [
-    {v:"11,048",l:"Closed PRs",c:C.navy},
-    {v:"9,799",l:"Human-reviewed",c:C.sage},
-    {v:"717",l:"Manually coded",c:C.wine},
-    {v:"35.7%",l:"Rejection = agent fail",c:C.AF},
-    {v:"15.4%",l:"Merges = human",c:C.FL},
+  const rejB = [
+    { a: "Claude Code", AF: 1, N: 4, U: 3, t: 8 },
+    { a: "Copilot", AF: 19, N: 17, U: 21, t: 57 },
+    { a: "Cursor", AF: 15, N: 1, U: 6, t: 22 },
+    { a: "Devin", AF: 37, N: 69, U: 47, t: 153 },
+    { a: "Codex", AF: 54, N: 19, U: 40, t: 113 },
   ];
-  return e("div",{style:{display:"grid",gridTemplateColumns:"repeat(5,1fr)",background:C.card,borderBottom:`1px solid ${C.sandD}`}},
-    ...stats.map((s,i)=>e("div",{key:i,style:{textAlign:"center",padding:"7px 3px",borderRight:i<4?`1px solid ${C.sandD}`:"none",background:`${s.c}06`}},
-      e("div",{style:{fontSize:20,fontWeight:800,color:s.c,lineHeight:1}},s.v),
-      e("div",{style:{fontSize:9.5,color:C.slate,marginTop:2}},s.l)
-    ))
-  );
-}
-
-function DatasetBars() {
-  const items = [
-    {a:"Codex",p:40.7,c:C.codex},
-    {a:"Devin",p:34.5,c:C.devin},
-    {a:"Copilot",p:14.6,c:C.copilot},
-    {a:"Cursor",p:8.0,c:C.cursor},
-    {a:"Claude",p:2.2,c:C.claude},
+  const merB = [
+    { a: "Claude Code", FL: 0, HI: 0, NF: 8, U: 0, t: 8 },
+    { a: "Copilot", FL: 13, HI: 16, NF: 11, U: 9, t: 49 },
+    { a: "Cursor", FL: 1, HI: 0, NF: 30, U: 2, t: 33 },
+    { a: "Devin", FL: 14, HI: 11, NF: 74, U: 8, t: 107 },
+    { a: "Codex", FL: 0, HI: 1, NF: 165, U: 1, t: 167 },
   ];
-  return e("div",null,
-    ...items.map(d=>e("div",{key:d.a,style:{display:"flex",alignItems:"center",gap:5,marginBottom:3}},
-      e("span",{style:{fontSize:10.2,fontWeight:700,color:C.navy,width:46,textAlign:"right"}},d.a),
-      e("div",{style:{flex:1,height:14,background:"#e5e7eb",borderRadius:7,overflow:"hidden"}},
-        e("div",{style:{width:`${Math.max(d.p*2.15,8)}%`,height:"100%",background:d.c,borderRadius:7,display:"flex",alignItems:"center",justifyContent:"flex-end",paddingRight:4}},
-          d.p>5 ? e("span",{style:{fontSize:8.5,fontWeight:700,color:"#fff"}},`${d.p}%`) : null
-        )
-      ),
-      d.p<=5 ? e("span",{style:{fontSize:8.5,color:C.slate,width:28}},`${d.p}%`) : null
-    ))
-  );
-}
 
-function PipelineGraphic() {
-  const steps = [
-    {y:0,t:"AIDev dataset",s:"Closed PRs · ≥500★",c:C.sage,n:"11,048"},
-    {y:54,t:"Human review filter",s:"Remove bot-only",c:C.sage,n:"9,799"},
-    {y:108,t:"Stratified sample",s:"Balanced by agent",c:C.amber,n:"717"},
-    {y:162,t:"Manual coding",s:"2 coders · κ≈0.90",c:C.wine,n:"done"},
-  ];
-  return e("svg",{width:"100%",viewBox:"0 0 220 220",style:{display:"block"}},
-    e("defs",null,e("marker",{id:"ar",viewBox:"0 0 10 10",refX:8,refY:5,markerWidth:5,markerHeight:5,orient:"auto"},
-      e("path",{d:"M2 2L8 5L2 8",fill:"none",stroke:C.slate,strokeWidth:1.3,strokeLinecap:"round",strokeLinejoin:"round"})
-    )),
-    ...steps.flatMap((s,i)=>[
-      e("rect",{key:`r${i}`,x:0,y:s.y,width:182,height:38,rx:7,fill:`${s.c}12`,stroke:s.c,strokeWidth:1}),
-      e("text",{key:`t${i}`,x:9,y:s.y+16,fontSize:11,fontWeight:700,fill:C.navy,fontFamily:sf},s.t),
-      e("text",{key:`s${i}`,x:9,y:s.y+29,fontSize:8.5,fill:C.slate,fontFamily:sf},s.s),
-      e("rect",{key:`b${i}`,x:188,y:s.y+5,width:32,height:28,rx:6,fill:s.c}),
-      e("text",{key:`n${i}`,x:204,y:s.y+22,fontSize:8.5,fontWeight:700,fill:"#fff",textAnchor:"middle",fontFamily:sf},s.n),
-      i<3 ? e("line",{key:`l${i}`,x1:91,y1:s.y+38,x2:91,y2:s.y+54,stroke:C.slate,strokeWidth:1.1,markerEnd:"url(#ar)"}) : null
-    ].filter(Boolean))
-  );
-}
-
-function CrossAgentMap() {
-  const bubbles = [
-    {x:62,y:46,r:24,l:"Devin",c:C.devin},
-    {x:48,y:118,r:18,l:"Copilot",c:C.copilot},
-    {x:198,y:50,r:26,l:"Codex",c:C.codex},
-    {x:194,y:121,r:14,l:"Cursor",c:C.cursor},
-    {x:128,y:82,r:10,l:"Claude",c:C.claude},
-  ];
-  return e("div",null,
-    e("svg",{width:"100%",viewBox:"0 0 258 176",style:{display:"block"}},
-      e("rect",{x:0,y:0,width:258,height:176,rx:6,fill:C.card,stroke:C.sandD,strokeWidth:1}),
-      e("line",{x1:129,y1:6,x2:129,y2:170,stroke:C.sandD,strokeWidth:1,strokeDasharray:"4 3"}),
-      e("line",{x1:6,y1:88,x2:252,y2:88,stroke:C.sandD,strokeWidth:1,strokeDasharray:"4 3"}),
-      e("text",{x:64,y:171,textAnchor:"middle",fontSize:8.5,fill:C.slate,fontFamily:sf},"Workflow-heavy"),
-      e("text",{x:194,y:171,textAnchor:"middle",fontSize:8.5,fill:C.slate,fontFamily:sf},"Minimal interaction"),
-      e("text",{x:252,y:13,textAnchor:"end",fontSize:8.5,fill:C.slate,fontFamily:sf},"↑ More rejection"),
-      e("text",{x:252,y:86,textAnchor:"end",fontSize:8.5,fill:C.slate,fontFamily:sf},"↓ More merges"),
-      ...bubbles.flatMap(b=>[
-        e("circle",{key:`c${b.l}`,cx:b.x,cy:b.y,r:b.r,fill:`${b.c}30`,stroke:b.c,strokeWidth:1.4}),
-        e("text",{key:`t${b.l}`,x:b.x,y:b.y+(b.r>14?4:3),textAnchor:"middle",fontSize:b.r>14?9.2:8,fontWeight:700,fill:C.navy,fontFamily:sf},b.l)
-      ])
-    ),
-    e("div",{style:{fontSize:9,color:C.slate,marginTop:3,textAlign:"center"}},"Bubble size ≈ dataset share · position = interaction pattern")
-  );
-}
-
-function CompactPoster() {
-  return e("div",{style:{width:"100%",aspectRatio:"84/119",background:C.sand,border:`3px solid ${C.wine}`,overflow:"hidden",display:"flex",flexDirection:"column",fontFamily:sf}},
-    e("div",{style:{background:`linear-gradient(140deg,${C.wine} 0%,${C.navy} 100%)`,color:"#fff",padding:"14px 18px 10px",display:"flex",gap:12,alignItems:"center"}},
-      e("div",{style:{flex:1}},
-        e("div",{style:{display:"inline-block",background:"rgba(255,255,255,0.14)",borderRadius:4,padding:"2px 8px",fontSize:9.5,fontWeight:700,letterSpacing:1.4,textTransform:"uppercase",marginBottom:4}},`MSR '26 · Mining Challenge`),
-        e("h1",{style:{fontSize:22,fontWeight:800,lineHeight:1.12,marginBottom:2}},"Why Are Agentic Pull Requests Merged or Rejected?"),
-        e("div",{style:{fontSize:13,opacity:0.88,fontStyle:"italic",marginBottom:6}},"An Empirical Study"),
-        e("div",{style:{fontSize:10.4,lineHeight:1.35,opacity:0.82}},"S.R.O. Peralta · F. Hoshi · H. Washizaki · N. Ubayashi | Waseda · I. Kondo · Y. Higo | Osaka · H. Mukai · N. Yoshida | Ritsumeikan · K. Kusama | Kyushu · H. Tanaka · Y. Fan | NAIST")
-      ),
-      e("div",{style:{background:"rgba(255,255,255,0.12)",borderRadius:8,padding:"3px 5px",textAlign:"center"}},
-      e("img", {
-        src: "./QR.svg",
-        style: {
-          width: 84,
-          height: 84,
-          background: "#fff",
-          borderRadius: 4,
-          padding: 0
-        }
+  function Donut({ data, size = 120, thick = 22, center, sub }) {
+    const r = (size - thick) / 2,
+      cx = size / 2,
+      cy = size / 2;
+    const tot = data.reduce((s, d) => s + d.v, 0),
+      circ = 2 * Math.PI * r;
+    let cum = 0;
+    return e(
+      "svg",
+      {
+        width: size,
+        height: size,
+        viewBox: `0 0 ${size} ${size}`,
+        style: { display: "block", flexShrink: 0 },
+      },
+      ...data.map((d, i) => {
+        const pct = d.v / tot,
+          dash = pct * circ,
+          off = -(cum / tot) * circ;
+        cum += d.v;
+        return e("circle", {
+          key: i,
+          cx,
+          cy,
+          r,
+          fill: "none",
+          stroke: d.c,
+          strokeWidth: thick,
+          strokeDasharray: `${dash} ${circ - dash}`,
+          strokeDashoffset: off,
+          transform: `rotate(-90 ${cx} ${cy})`,
+        });
       }),
-        e("div",{style:{fontSize:7.8,opacity:0.7}},"Scan for paper")
-      )
-    ),
+      e(
+        "text",
+        {
+          x: cx,
+          y: cy - 2,
+          textAnchor: "middle",
+          fontSize: size * 0.18,
+          fontWeight: 800,
+          fill: C.navy,
+          fontFamily: sf,
+        },
+        center,
+      ),
+      sub &&
+        e(
+          "text",
+          {
+            x: cx,
+            y: cy + size * 0.1,
+            textAnchor: "middle",
+            fontSize: size * 0.075,
+            fill: C.slate,
+            fontFamily: sf,
+          },
+          sub,
+        ),
+    );
+  }
 
-    e(StatRibbon),
+  function HBar({ items, total, h = 18, label }) {
+    return e(
+      "div",
+      { style: { marginBottom: 4 } },
+      e(
+        "div",
+        {
+          style: {
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: 10.5,
+            marginBottom: 2,
+            fontFamily: sf,
+          },
+        },
+        e("span", { style: { fontWeight: 700, color: C.navy } }, label),
+        e("span", { style: { color: C.slate } }, `n=${total}`),
+      ),
+      e(
+        "div",
+        {
+          style: {
+            display: "flex",
+            height: h,
+            borderRadius: h / 2,
+            overflow: "hidden",
+            background: "#e5e7eb",
+          },
+        },
+        ...items.map((it, i) => {
+          const w = (it.v / total) * 100;
+          if (!w) return null;
+          return e(
+            "div",
+            {
+              key: i,
+              style: {
+                width: w + "%",
+                background: it.c,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 9,
+                color: "#fff",
+                fontWeight: 700,
+              },
+            },
+            w > 15 ? Math.round(w) + "%" : "",
+          );
+        }),
+      ),
+    );
+  }
 
-    e("div",{style:{flex:1,display:"grid",gridTemplateColumns:"0.9fr 1.38fr 0.9fr",minHeight:0}},
-      e("div",{style:{padding:"10px 8px 8px 12px",display:"flex",flexDirection:"column",gap:8}},
-        e(Sec,{title:"Motivation",accent:C.navy,sub:"Agentic PR performance is often judged by merge or rejection outcomes, but those labels ignore review interactions and workflow context."},
-          e("div",{style:{background:`${C.wine}0a`,border:`1px solid ${C.wine}30`,borderRadius:6,padding:"6px 8px",marginBottom:5}},
-            e("div",{style:{fontSize:10.8,fontWeight:700,color:C.wine,lineHeight:1.3}},"Outcomes can conflate agent behavior with repository conventions, reviewer actions, and closure practices.")
+  function Waffle({ value, total, color, size = 7, cols = 10 }) {
+    const filled = Math.round((value / total) * 25);
+    return e(
+      "div",
+      {
+        style: {
+          display: "flex",
+          flexWrap: "wrap",
+          width: cols * (size + 2),
+          gap: 2,
+        },
+      },
+      ...Array.from({ length: 25 }, (_, i) =>
+        e("div", {
+          key: i,
+          style: {
+            width: size,
+            height: size,
+            borderRadius: 1.5,
+            background: i < filled ? color : "#ddd9d0",
+          },
+        }),
+      ),
+    );
+  }
+
+  function Sec({ title, sub, accent = C.wine, children }) {
+    return e(
+      "div",
+      null,
+      e(
+        "div",
+        {
+          style: {
+            fontSize: 14.5,
+            fontWeight: 800,
+            color: accent,
+            textTransform: "uppercase",
+            letterSpacing: 0.7,
+            borderBottom: `2px solid ${accent}`,
+            paddingBottom: 2,
+            marginBottom: sub ? 2 : 5,
+          },
+        },
+        title,
+      ),
+      sub &&
+        e(
+          "div",
+          {
+            style: {
+              fontSize: 11.2,
+              color: "#444",
+              lineHeight: 1.35,
+              marginBottom: 5,
+            },
+          },
+          sub,
+        ),
+      children,
+    );
+  }
+
+  function Leg({ items }) {
+    return e(
+      "div",
+      { style: { display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 4 } },
+      ...items.map((item) =>
+        e(
+          "div",
+          {
+            key: item.l,
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: 4,
+              fontSize: 10.2,
+              fontFamily: sf,
+            },
+          },
+          e("div", {
+            style: {
+              width: 10,
+              height: 10,
+              borderRadius: 2,
+              background: item.c,
+            },
+          }),
+          e("strong", null, item.v),
+          e("span", { style: { color: C.slate } }, item.l),
+        ),
+      ),
+    );
+  }
+
+  function MiniCards({ items }) {
+    return e(
+      "div",
+      { style: { display: "flex", gap: 4, marginTop: 4 } },
+      ...items.map((x) =>
+        e(
+          "div",
+          {
+            key: x.l,
+            style: {
+              flex: 1,
+              background: `${x.c}0c`,
+              borderRadius: 6,
+              padding: "4px 3px",
+              textAlign: "center",
+            },
+          },
+          e("div", { style: { fontSize: 13 } }, x.icon),
+          e(
+            "div",
+            {
+              style: {
+                fontSize: 15,
+                fontWeight: 800,
+                color: x.c,
+                lineHeight: 1.1,
+              },
+            },
+            x.n,
           ),
-          e(BulletPills,{items:["Merge rates miss context","Decisions live in review","Workflows shape outcomes"],color:C.navy})
-        ),
-
-        e(Sec,{title:"Research Questions",accent:C.navy},
-          ...[
-            {rq:"RQ1",q:"What drives Agentic-PR rejections?",d:"Separate agent failures from workflow-driven and undocumented closures.",c:C.wine},
-            {rq:"RQ2",q:"How do humans shape successful PRs?",d:"Test whether merged PRs are autonomous or collaboratively refined.",c:C.sage},
-          ].map(r=>e("div",{key:r.rq,style:{background:`${r.c}0a`,border:`1px solid ${r.c}35`,borderRadius:6,padding:"6px 8px",display:"flex",gap:7,alignItems:"flex-start",marginBottom:5}},
-            e("div",{style:{minWidth:30,height:30,borderRadius:6,background:r.c,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:10.5,fontWeight:800,flexShrink:0}},r.rq),
-            e("div",null,
-              e("div",{style:{fontSize:11.5,fontWeight:700,color:C.navy,lineHeight:1.25}},r.q),
-              e("div",{style:{fontSize:9.8,color:C.slate,lineHeight:1.25,marginTop:1}},r.d)
-            )
-          ))
-        ),
-
-        e(Sec,{title:"Study Pipeline",accent:C.sage,sub:"AIDev dataset → filter to human-reviewed PRs in ≥500★ repos → stratified sample → manual coding."},
-          e(PipelineGraphic)
-        ),
-
-        e(Sec,{title:"Dataset",accent:C.sage,sub:"9,799 human-reviewed PRs; Codex and Devin dominate the submission pool."},
-          e("div",{style:{display:"flex",gap:8,alignItems:"center",marginBottom:6}},
-          e(Waffle,{value:6179,total:9799,color:C.sage,size:6,cols:5}),
-          e("div",null,
-              e("div",{style:{display:"flex",alignItems:"center",gap:4,marginBottom:2,fontSize:11.2,fontWeight:700}},e("div",{style:{width:10,height:10,borderRadius:2,background:C.sage}}),"63% Merged (6,179)"),
-              e("div",{style:{display:"flex",alignItems:"center",gap:4,fontSize:11.2,fontWeight:700}},e("div",{style:{width:10,height:10,borderRadius:2,background:"#ddd9d0"}}),"37% Rejected (3,620)")
-            )
+          e(
+            "div",
+            { style: { fontSize: 8, color: C.slate, lineHeight: 1.2 } },
+            x.l,
           ),
-          e(DatasetBars),
-          e("div",{style:{display:"flex",gap:5,marginTop:5}},
-            ...[{l:"RQ1",v:"κ≈0.90"},{l:"RQ2",v:"κ=1.00"}].map(k=>e("div",{key:k.l,style:{flex:1,background:C.navyL,borderRadius:6,padding:"6px 7px",textAlign:"center"}},
-              e("div",{style:{fontSize:16,fontWeight:800,color:C.navy,lineHeight:1}},k.v),
-              e("div",{style:{fontSize:9,color:C.slate,marginTop:1}},k.l)
-            ))
-          )
-        )
+        ),
+      ),
+    );
+  }
+
+  function BulletPills({ items, color }) {
+    return e(
+      "div",
+      {
+        style: {
+          display: "grid",
+          gridTemplateColumns: "repeat(3,1fr)",
+          gap: 4,
+        },
+      },
+      ...items.map((t, i) =>
+        e(
+          "div",
+          {
+            key: i,
+            style: {
+              background: `${color}12`,
+              border: `1px solid ${color}24`,
+              borderRadius: 6,
+              padding: "5px 6px",
+              fontSize: 9.2,
+              fontWeight: 700,
+              color: color,
+              lineHeight: 1.25,
+              textAlign: "center",
+            },
+          },
+          t,
+        ),
+      ),
+    );
+  }
+
+  function Callout({ text, color }) {
+    return e(
+      "div",
+      {
+        style: {
+          background: `${color}0d`,
+          borderLeft: `3px solid ${color}`,
+          borderRadius: "0 6px 6px 0",
+          padding: "6px 8px",
+          marginTop: 5,
+        },
+      },
+      e(
+        "div",
+        {
+          style: {
+            fontSize: 10.5,
+            fontWeight: 700,
+            color: color,
+            lineHeight: 1.3,
+          },
+        },
+        text,
+      ),
+    );
+  }
+
+  function StatRibbon() {
+    const stats = [
+      { v: "11,048", l: "Closed PRs", c: C.navy },
+      { v: "9,799", l: "Human-reviewed", c: C.sage },
+      { v: "717", l: "Manually coded", c: C.wine },
+      { v: "35.7%", l: "Rejection = agent fail", c: C.AF },
+      { v: "15.4%", l: "Merges = human", c: C.FL },
+    ];
+    return e(
+      "div",
+      {
+        style: {
+          display: "grid",
+          gridTemplateColumns: "repeat(5,1fr)",
+          background: C.card,
+          borderBottom: `1px solid ${C.sandD}`,
+        },
+      },
+      ...stats.map((s, i) =>
+        e(
+          "div",
+          {
+            key: i,
+            style: {
+              textAlign: "center",
+              padding: "7px 3px",
+              borderRight: i < 4 ? `1px solid ${C.sandD}` : "none",
+              background: `${s.c}06`,
+            },
+          },
+          e(
+            "div",
+            {
+              style: {
+                fontSize: 20,
+                fontWeight: 800,
+                color: s.c,
+                lineHeight: 1,
+              },
+            },
+            s.v,
+          ),
+          e(
+            "div",
+            { style: { fontSize: 9.5, color: C.slate, marginTop: 2 } },
+            s.l,
+          ),
+        ),
+      ),
+    );
+  }
+
+  function DatasetBars() {
+    const items = [
+      { a: "Codex", p: 40.7, c: C.codex },
+      { a: "Devin", p: 34.5, c: C.devin },
+      { a: "Copilot", p: 14.6, c: C.copilot },
+      { a: "Cursor", p: 8.0, c: C.cursor },
+      { a: "Claude", p: 2.2, c: C.claude },
+    ];
+    return e(
+      "div",
+      null,
+      ...items.map((d) =>
+        e(
+          "div",
+          {
+            key: d.a,
+            style: {
+              display: "flex",
+              alignItems: "center",
+              gap: 5,
+              marginBottom: 3,
+            },
+          },
+          e(
+            "span",
+            {
+              style: {
+                fontSize: 10.2,
+                fontWeight: 700,
+                color: C.navy,
+                width: 46,
+                textAlign: "right",
+              },
+            },
+            d.a,
+          ),
+          e(
+            "div",
+            {
+              style: {
+                flex: 1,
+                height: 14,
+                background: "#e5e7eb",
+                borderRadius: 7,
+                overflow: "hidden",
+              },
+            },
+            e(
+              "div",
+              {
+                style: {
+                  width: `${Math.max(d.p * 2.15, 8)}%`,
+                  height: "100%",
+                  background: d.c,
+                  borderRadius: 7,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                  paddingRight: 4,
+                },
+              },
+              d.p > 5
+                ? e(
+                    "span",
+                    {
+                      style: { fontSize: 8.5, fontWeight: 700, color: "#fff" },
+                    },
+                    `${d.p}%`,
+                  )
+                : null,
+            ),
+          ),
+          d.p <= 5
+            ? e(
+                "span",
+                { style: { fontSize: 8.5, color: C.slate, width: 28 } },
+                `${d.p}%`,
+              )
+            : null,
+        ),
+      ),
+    );
+  }
+
+  function PipelineGraphic() {
+    const steps = [
+      {
+        y: 0,
+        t: "AIDev dataset",
+        s: "Closed PRs · ≥500★",
+        c: C.sage,
+        n: "11,048",
+      },
+      {
+        y: 54,
+        t: "Human review filter",
+        s: "Remove bot-only",
+        c: C.sage,
+        n: "9,799",
+      },
+      {
+        y: 108,
+        t: "Stratified sample",
+        s: "Balanced by agent",
+        c: C.amber,
+        n: "717",
+      },
+      {
+        y: 162,
+        t: "Manual coding",
+        s: "2 coders · κ≈0.90",
+        c: C.wine,
+        n: "done",
+      },
+    ];
+    return e(
+      "svg",
+      { width: "100%", viewBox: "0 0 220 220", style: { display: "block" } },
+      e(
+        "defs",
+        null,
+        e(
+          "marker",
+          {
+            id: "ar",
+            viewBox: "0 0 10 10",
+            refX: 8,
+            refY: 5,
+            markerWidth: 5,
+            markerHeight: 5,
+            orient: "auto",
+          },
+          e("path", {
+            d: "M2 2L8 5L2 8",
+            fill: "none",
+            stroke: C.slate,
+            strokeWidth: 1.3,
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+          }),
+        ),
+      ),
+      ...steps.flatMap((s, i) =>
+        [
+          e("rect", {
+            key: `r${i}`,
+            x: 0,
+            y: s.y,
+            width: 182,
+            height: 38,
+            rx: 7,
+            fill: `${s.c}12`,
+            stroke: s.c,
+            strokeWidth: 1,
+          }),
+          e(
+            "text",
+            {
+              key: `t${i}`,
+              x: 9,
+              y: s.y + 16,
+              fontSize: 11,
+              fontWeight: 700,
+              fill: C.navy,
+              fontFamily: sf,
+            },
+            s.t,
+          ),
+          e(
+            "text",
+            {
+              key: `s${i}`,
+              x: 9,
+              y: s.y + 29,
+              fontSize: 8.5,
+              fill: C.slate,
+              fontFamily: sf,
+            },
+            s.s,
+          ),
+          e("rect", {
+            key: `b${i}`,
+            x: 188,
+            y: s.y + 5,
+            width: 32,
+            height: 28,
+            rx: 6,
+            fill: s.c,
+          }),
+          e(
+            "text",
+            {
+              key: `n${i}`,
+              x: 204,
+              y: s.y + 22,
+              fontSize: 8.5,
+              fontWeight: 700,
+              fill: "#fff",
+              textAnchor: "middle",
+              fontFamily: sf,
+            },
+            s.n,
+          ),
+          i < 3
+            ? e("line", {
+                key: `l${i}`,
+                x1: 91,
+                y1: s.y + 38,
+                x2: 91,
+                y2: s.y + 54,
+                stroke: C.slate,
+                strokeWidth: 1.1,
+                markerEnd: "url(#ar)",
+              })
+            : null,
+        ].filter(Boolean),
+      ),
+    );
+  }
+
+  function CrossAgentMap() {
+    const bubbles = [
+      { x: 62, y: 46, r: 24, l: "Devin", c: C.devin },
+      { x: 48, y: 118, r: 18, l: "Copilot", c: C.copilot },
+      { x: 198, y: 50, r: 26, l: "Codex", c: C.codex },
+      { x: 194, y: 121, r: 14, l: "Cursor", c: C.cursor },
+      { x: 128, y: 82, r: 10, l: "Claude", c: C.claude },
+    ];
+    return e(
+      "div",
+      null,
+      e(
+        "svg",
+        { width: "100%", viewBox: "0 0 258 176", style: { display: "block" } },
+        e("rect", {
+          x: 0,
+          y: 0,
+          width: 258,
+          height: 176,
+          rx: 6,
+          fill: C.card,
+          stroke: C.sandD,
+          strokeWidth: 1,
+        }),
+        e("line", {
+          x1: 129,
+          y1: 6,
+          x2: 129,
+          y2: 170,
+          stroke: C.sandD,
+          strokeWidth: 1,
+          strokeDasharray: "4 3",
+        }),
+        e("line", {
+          x1: 6,
+          y1: 88,
+          x2: 252,
+          y2: 88,
+          stroke: C.sandD,
+          strokeWidth: 1,
+          strokeDasharray: "4 3",
+        }),
+        e(
+          "text",
+          {
+            x: 64,
+            y: 171,
+            textAnchor: "middle",
+            fontSize: 8.5,
+            fill: C.slate,
+            fontFamily: sf,
+          },
+          "Workflow-heavy",
+        ),
+        e(
+          "text",
+          {
+            x: 194,
+            y: 171,
+            textAnchor: "middle",
+            fontSize: 8.5,
+            fill: C.slate,
+            fontFamily: sf,
+          },
+          "Minimal interaction",
+        ),
+        e(
+          "text",
+          {
+            x: 252,
+            y: 13,
+            textAnchor: "end",
+            fontSize: 8.5,
+            fill: C.slate,
+            fontFamily: sf,
+          },
+          "↑ More rejection",
+        ),
+        e(
+          "text",
+          {
+            x: 252,
+            y: 86,
+            textAnchor: "end",
+            fontSize: 8.5,
+            fill: C.slate,
+            fontFamily: sf,
+          },
+          "↓ More merges",
+        ),
+        ...bubbles.flatMap((b) => [
+          e("circle", {
+            key: `c${b.l}`,
+            cx: b.x,
+            cy: b.y,
+            r: b.r,
+            fill: `${b.c}30`,
+            stroke: b.c,
+            strokeWidth: 1.4,
+          }),
+          e(
+            "text",
+            {
+              key: `t${b.l}`,
+              x: b.x,
+              y: b.y + (b.r > 14 ? 4 : 3),
+              textAnchor: "middle",
+              fontSize: b.r > 14 ? 9.2 : 8,
+              fontWeight: 700,
+              fill: C.navy,
+              fontFamily: sf,
+            },
+            b.l,
+          ),
+        ]),
+      ),
+      e(
+        "div",
+        {
+          style: {
+            fontSize: 9,
+            color: C.slate,
+            marginTop: 3,
+            textAlign: "center",
+          },
+        },
+        "Bubble size ≈ dataset share · position = interaction pattern",
+      ),
+    );
+  }
+
+  function CompactPoster() {
+    return e(
+      "div",
+      {
+        style: {
+          width: "100%",
+          aspectRatio: "84/119",
+          background: C.sand,
+          border: `3px solid ${C.wine}`,
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          fontFamily: sf,
+        },
+      },
+      e(
+        "div",
+        {
+          style: {
+            background: `linear-gradient(140deg,${C.wine} 0%,${C.navy} 100%)`,
+            color: "#fff",
+            padding: "14px 18px 10px",
+            display: "flex",
+            gap: 12,
+            alignItems: "center",
+          },
+        },
+        e(
+          "div",
+          { style: { flex: 1 } },
+          e(
+            "div",
+            {
+              style: {
+                display: "inline-block",
+                background: "rgba(255,255,255,0.14)",
+                borderRadius: 4,
+                padding: "2px 8px",
+                fontSize: 9.5,
+                fontWeight: 700,
+                letterSpacing: 1.4,
+                textTransform: "uppercase",
+                marginBottom: 4,
+              },
+            },
+            `MSR '26 · Mining Challenge`,
+          ),
+          e(
+            "h1",
+            {
+              style: {
+                fontSize: 22,
+                fontWeight: 800,
+                lineHeight: 1.12,
+                marginBottom: 2,
+              },
+            },
+            "Why Are Agentic Pull Requests Merged or Rejected?",
+          ),
+          e(
+            "div",
+            {
+              style: {
+                fontSize: 13,
+                opacity: 0.88,
+                fontStyle: "italic",
+                marginBottom: 6,
+              },
+            },
+            "An Empirical Study",
+          ),
+          e(
+            "div",
+            { style: { fontSize: 10.4, lineHeight: 1.35, opacity: 0.82 } },
+            "S.R.O. Peralta · F. Hoshi · H. Washizaki · N. Ubayashi | Waseda · I. Kondo · Y. Higo | Osaka · H. Mukai · N. Yoshida | Ritsumeikan · K. Kusama | Kyushu · H. Tanaka · Y. Fan | NAIST",
+          ),
+        ),
+        e(
+          "div",
+          {
+            style: {
+              background: "rgba(255,255,255,0.12)",
+              borderRadius: 8,
+              padding: "3px 5px",
+              textAlign: "center",
+            },
+          },
+          e("img", {
+            src: "./QR.svg",
+            style: {
+              width: 84,
+              height: 84,
+              background: "#fff",
+              borderRadius: 4,
+              padding: 0,
+            },
+          }),
+          e(
+            "div",
+            { style: { fontSize: 7.8, opacity: 0.7 } },
+            "Scan for paper",
+          ),
+        ),
       ),
 
-      e("div",{style:{padding:"10px 12px",background:C.card,borderLeft:`1px solid ${C.sandD}`,borderRight:`1px solid ${C.sandD}`,display:"flex",flexDirection:"column",gap:8}},
-        e(Sec,{title:"RQ1 — Why Are Agentic-PRs Rejected?",accent:C.AF,sub:"Only about one-third of rejected PRs reflect observable technical failures."},
-          e("div",{style:{display:"flex",gap:10,alignItems:"center",marginBottom:6}},
-            e(Donut,{size:122,thick:22,center:"353",sub:"rejected",data:[{v:126,c:C.AF},{v:110,c:C.NonAF},{v:117,c:C.Unk}]}),
-            e("div",{style:{flex:1}},
-              e(Leg,{items:[
-                {l:"Agentic failure",c:C.AF,v:"35.7%"},
-                {l:"Non-agentic",c:C.NonAF,v:"31.2%"},
-                {l:"Unknown",c:C.Unk,v:"33.1%"},
-              ]}),
-              e(MiniCards,{items:[
-                {icon:"⚠",n:"126",l:"CI / test failures",c:C.AF},
-                {icon:"↻",n:"110",l:"Workflow causes",c:C.NonAF},
-                {icon:"?",n:"117",l:"Silent closures",c:C.Unk},
-              ]})
-            )
+      e(StatRibbon),
+
+      e(
+        "div",
+        {
+          style: {
+            flex: 1,
+            display: "grid",
+            gridTemplateColumns: "0.9fr 1.38fr 0.9fr",
+            minHeight: 0,
+          },
+        },
+        e(
+          "div",
+          {
+            style: {
+              padding: "10px 8px 8px 12px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            },
+          },
+          e(
+            Sec,
+            {
+              title: "Motivation",
+              accent: C.navy,
+              sub: "Agentic PR performance is often judged by merge or rejection outcomes, but those labels ignore review interactions and workflow context.",
+            },
+            e(
+              "div",
+              {
+                style: {
+                  background: `${C.wine}0a`,
+                  border: `1px solid ${C.wine}30`,
+                  borderRadius: 6,
+                  padding: "6px 8px",
+                  marginBottom: 5,
+                },
+              },
+              e(
+                "div",
+                {
+                  style: {
+                    fontSize: 10.8,
+                    fontWeight: 700,
+                    color: C.wine,
+                    lineHeight: 1.3,
+                  },
+                },
+                "Outcomes can conflate agent behavior with repository conventions, reviewer actions, and closure practices.",
+              ),
+            ),
+            e(BulletPills, {
+              items: [
+                "Merge rates miss context",
+                "Decisions live in review",
+                "Workflows shape outcomes",
+              ],
+              color: C.navy,
+            }),
           ),
-          e("div",{style:{fontSize:11.5,fontWeight:700,color:C.navy,marginBottom:3}},"Per-agent rejection breakdown"),
-          ...rejB.map(r=>e(HBar,{key:r.a,label:r.a,total:r.t,items:[{v:r.AF,c:C.AF},{v:r.N,c:C.NonAF},{v:r.U,c:C.Unk}]})),
-          e(Callout,{text:"Rejections overstate agent error: Devin rejections were often workflow-driven, while Codex had the highest share of genuine agentic failure.",color:C.AF})
+
+          e(
+            Sec,
+            { title: "Research Questions", accent: C.navy },
+            ...[
+              {
+                rq: "RQ1",
+                q: "What drives Agentic-PR rejections?",
+                d: "Separate agent failures from workflow-driven and undocumented closures.",
+                c: C.wine,
+              },
+              {
+                rq: "RQ2",
+                q: "How do humans shape successful PRs?",
+                d: "Test whether merged PRs are autonomous or collaboratively refined.",
+                c: C.sage,
+              },
+            ].map((r) =>
+              e(
+                "div",
+                {
+                  key: r.rq,
+                  style: {
+                    background: `${r.c}0a`,
+                    border: `1px solid ${r.c}35`,
+                    borderRadius: 6,
+                    padding: "6px 8px",
+                    display: "flex",
+                    gap: 7,
+                    alignItems: "flex-start",
+                    marginBottom: 5,
+                  },
+                },
+                e(
+                  "div",
+                  {
+                    style: {
+                      minWidth: 30,
+                      height: 30,
+                      borderRadius: 6,
+                      background: r.c,
+                      color: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 10.5,
+                      fontWeight: 800,
+                      flexShrink: 0,
+                    },
+                  },
+                  r.rq,
+                ),
+                e(
+                  "div",
+                  null,
+                  e(
+                    "div",
+                    {
+                      style: {
+                        fontSize: 11.5,
+                        fontWeight: 700,
+                        color: C.navy,
+                        lineHeight: 1.25,
+                      },
+                    },
+                    r.q,
+                  ),
+                  e(
+                    "div",
+                    {
+                      style: {
+                        fontSize: 9.8,
+                        color: C.slate,
+                        lineHeight: 1.25,
+                        marginTop: 1,
+                      },
+                    },
+                    r.d,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          e(
+            Sec,
+            {
+              title: "Study Pipeline",
+              accent: C.sage,
+              sub: "AIDev dataset → filter to human-reviewed PRs in ≥500★ repos → stratified sample → manual coding.",
+            },
+            e(PipelineGraphic),
+          ),
+
+          e(
+            Sec,
+            {
+              title: "Dataset",
+              accent: C.sage,
+              sub: "9,799 human-reviewed PRs; Codex and Devin dominate the submission pool.",
+            },
+            e(
+              "div",
+              {
+                style: {
+                  display: "flex",
+                  gap: 8,
+                  alignItems: "center",
+                  marginBottom: 6,
+                },
+              },
+              e(Waffle, {
+                value: 6179,
+                total: 9799,
+                color: C.sage,
+                size: 6,
+                cols: 5,
+              }),
+              e(
+                "div",
+                null,
+                e(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 4,
+                      marginBottom: 2,
+                      fontSize: 11.2,
+                      fontWeight: 700,
+                    },
+                  },
+                  e("div", {
+                    style: {
+                      width: 10,
+                      height: 10,
+                      borderRadius: 2,
+                      background: C.sage,
+                    },
+                  }),
+                  "63% Merged (6,179)",
+                ),
+                e(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 4,
+                      fontSize: 11.2,
+                      fontWeight: 700,
+                    },
+                  },
+                  e("div", {
+                    style: {
+                      width: 10,
+                      height: 10,
+                      borderRadius: 2,
+                      background: "#ddd9d0",
+                    },
+                  }),
+                  "37% Rejected (3,620)",
+                ),
+              ),
+            ),
+            e(DatasetBars),
+            e(
+              "div",
+              { style: { display: "flex", gap: 5, marginTop: 5 } },
+              ...[
+                { l: "RQ1", v: "κ≈0.90" },
+                { l: "RQ2", v: "κ=1.00" },
+              ].map((k) =>
+                e(
+                  "div",
+                  {
+                    key: k.l,
+                    style: {
+                      flex: 1,
+                      background: C.navyL,
+                      borderRadius: 6,
+                      padding: "6px 7px",
+                      textAlign: "center",
+                    },
+                  },
+                  e(
+                    "div",
+                    {
+                      style: {
+                        fontSize: 16,
+                        fontWeight: 800,
+                        color: C.navy,
+                        lineHeight: 1,
+                      },
+                    },
+                    k.v,
+                  ),
+                  e(
+                    "div",
+                    { style: { fontSize: 9, color: C.slate, marginTop: 1 } },
+                    k.l,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
 
-        e(Sec,{title:"RQ2 — How Do Humans Shape Successful PRs?",accent:C.FL,sub:"Most merged PRs are autonomous; only 15.4% show clear human involvement."},
-          e("div",{style:{display:"flex",gap:10,alignItems:"center",marginBottom:6}},
-            e(Donut,{size:122,thick:22,center:"364",sub:"merged",data:[{v:28,c:C.FL},{v:28,c:C.HI},{v:288,c:C.NoFL},{v:20,c:C.UnkM}]}),
-            e("div",{style:{flex:1}},
-              e(Leg,{items:[
-                {l:"Feedback loop",c:C.FL,v:"7.7%"},
-                {l:"Human commits",c:C.HI,v:"7.7%"},
-                {l:"No feedback",c:C.NoFL,v:"79.1%"},
-                {l:"Unknown",c:C.UnkM,v:"5.5%"},
-              ]}),
-              e(MiniCards,{items:[
-                {icon:"💬",n:"28",l:"Reviewer→agent revises",c:C.FL},
-                {icon:"✏️",n:"28",l:"Reviewer commits",c:C.HI},
-                {icon:"✓",n:"288",l:"Merged autonomously",c:C.NoFL},
-              ]})
-            )
+        e(
+          "div",
+          {
+            style: {
+              padding: "10px 12px",
+              background: C.card,
+              borderLeft: `1px solid ${C.sandD}`,
+              borderRight: `1px solid ${C.sandD}`,
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            },
+          },
+          e(
+            Sec,
+            {
+              title: "RQ1 — Why Are Agentic-PRs Rejected?",
+              accent: C.AF,
+              sub: "Only about one-third of rejected PRs reflect observable technical failures.",
+            },
+            e(
+              "div",
+              {
+                style: {
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "center",
+                  marginBottom: 6,
+                },
+              },
+              e(Donut, {
+                size: 122,
+                thick: 22,
+                center: "353",
+                sub: "rejected",
+                data: [
+                  { v: 126, c: C.AF },
+                  { v: 110, c: C.NonAF },
+                  { v: 117, c: C.Unk },
+                ],
+              }),
+              e(
+                "div",
+                { style: { flex: 1 } },
+                e(Leg, {
+                  items: [
+                    { l: "Agentic failure", c: C.AF, v: "35.7%" },
+                    { l: "Non-agentic", c: C.NonAF, v: "31.2%" },
+                    { l: "Unknown", c: C.Unk, v: "33.1%" },
+                  ],
+                }),
+                e(MiniCards, {
+                  items: [
+                    { icon: "⚠", n: "126", l: "CI / test failures", c: C.AF },
+                    { icon: "↻", n: "110", l: "Workflow causes", c: C.NonAF },
+                    { icon: "?", n: "117", l: "Silent closures", c: C.Unk },
+                  ],
+                }),
+              ),
+            ),
+            e(
+              "div",
+              {
+                style: {
+                  fontSize: 11.5,
+                  fontWeight: 700,
+                  color: C.navy,
+                  marginBottom: 3,
+                },
+              },
+              "Per-agent rejection breakdown",
+            ),
+            ...rejB.map((r) =>
+              e(HBar, {
+                key: r.a,
+                label: r.a,
+                total: r.t,
+                items: [
+                  { v: r.AF, c: C.AF },
+                  { v: r.N, c: C.NonAF },
+                  { v: r.U, c: C.Unk },
+                ],
+              }),
+            ),
+            e(Callout, {
+              text: "Rejections overstate agent error: Devin rejections were often workflow-driven, while Codex had the highest share of genuine agentic failure.",
+              color: C.AF,
+            }),
           ),
-          e("div",{style:{fontSize:11.5,fontWeight:700,color:C.navy,marginBottom:3}},"Per-agent merge interaction"),
-          ...merB.map(r=>e(HBar,{key:r.a,label:r.a,total:r.t,items:[{v:r.FL,c:C.FL},{v:r.HI,c:C.HI},{v:r.NF,c:C.NoFL},{v:r.U,c:C.UnkM}]})),
-          e(Callout,{text:"Copilot and Devin account for nearly all human-involved merges. Codex and Cursor merge mostly without iterative review.",color:C.FL})
+
+          e(
+            Sec,
+            {
+              title: "RQ2 — How Do Humans Shape Successful PRs?",
+              accent: C.FL,
+              sub: "Most merged PRs are autonomous; only 15.4% show clear human involvement.",
+            },
+            e(
+              "div",
+              {
+                style: {
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "center",
+                  marginBottom: 6,
+                },
+              },
+              e(Donut, {
+                size: 122,
+                thick: 22,
+                center: "364",
+                sub: "merged",
+                data: [
+                  { v: 28, c: C.FL },
+                  { v: 28, c: C.HI },
+                  { v: 288, c: C.NoFL },
+                  { v: 20, c: C.UnkM },
+                ],
+              }),
+              e(
+                "div",
+                { style: { flex: 1 } },
+                e(Leg, {
+                  items: [
+                    { l: "Feedback loop", c: C.FL, v: "7.7%" },
+                    { l: "Human commits", c: C.HI, v: "7.7%" },
+                    { l: "No feedback", c: C.NoFL, v: "79.1%" },
+                    { l: "Unknown", c: C.UnkM, v: "5.5%" },
+                  ],
+                }),
+                e(MiniCards, {
+                  items: [
+                    {
+                      icon: "💬",
+                      n: "28",
+                      l: "Reviewer→agent revises",
+                      c: C.FL,
+                    },
+                    { icon: "✏️", n: "28", l: "Reviewer commits", c: C.HI },
+                    {
+                      icon: "✓",
+                      n: "288",
+                      l: "Merged autonomously",
+                      c: C.NoFL,
+                    },
+                  ],
+                }),
+              ),
+            ),
+            e(
+              "div",
+              {
+                style: {
+                  fontSize: 11.5,
+                  fontWeight: 700,
+                  color: C.navy,
+                  marginBottom: 3,
+                },
+              },
+              "Per-agent merge interaction",
+            ),
+            ...merB.map((r) =>
+              e(HBar, {
+                key: r.a,
+                label: r.a,
+                total: r.t,
+                items: [
+                  { v: r.FL, c: C.FL },
+                  { v: r.HI, c: C.HI },
+                  { v: r.NF, c: C.NoFL },
+                  { v: r.U, c: C.UnkM },
+                ],
+              }),
+            ),
+            e(Callout, {
+              text: "Copilot and Devin account for nearly all human-involved merges. Codex and Cursor merge mostly without iterative review.",
+              color: C.FL,
+            }),
+          ),
+        ),
+
+        e(
+          "div",
+          {
+            style: {
+              padding: "10px 12px 8px 8px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+            },
+          },
+
+          e(
+            "div",
+            {
+              style: {
+                background: `${C.amber}08`,
+                border: `1px solid ${C.amber}30`,
+                borderRadius: 8,
+                padding: "8px 10px",
+              },
+            },
+            e(
+              "div",
+              {
+                style: {
+                  fontSize: 11.8,
+                  fontWeight: 800,
+                  color: C.amber,
+                  textTransform: "uppercase",
+                  letterSpacing: 0.5,
+                  marginBottom: 3,
+                },
+              },
+              "Discussion",
+            ),
+            e(
+              "div",
+              { style: { fontSize: 10.6, color: C.navy, lineHeight: 1.35 } },
+              "PR outcomes reflect both agent behavior and repository workflow. Silent closures remain a major source of uncertainty.",
+            ),
+          ),
+
+          e(
+            Sec,
+            {
+              title: "Cross-Agent Map",
+              accent: C.HI,
+              sub: "Agent differences align with repository practices such as CI gating and iterative review norms.",
+            },
+            e(CrossAgentMap),
+          ),
+
+          e(
+            "div",
+            {
+              style: {
+                background: `linear-gradient(135deg,${C.wine} 0%,${C.navy} 100%)`,
+                borderRadius: 10,
+                padding: "10px 12px",
+                color: "#fff",
+              },
+            },
+            e(
+              "div",
+              {
+                style: {
+                  fontSize: 9,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                  opacity: 0.74,
+                  marginBottom: 3,
+                },
+              },
+              "Key Takeaway",
+            ),
+            e(
+              "div",
+              { style: { fontSize: 15, fontWeight: 800, lineHeight: 1.25 } },
+              "PR outcomes alone are unreliable indicators of agent performance.",
+            ),
+            e(
+              "div",
+              {
+                style: {
+                  fontSize: 11.2,
+                  opacity: 0.92,
+                  lineHeight: 1.35,
+                  marginTop: 5,
+                },
+              },
+              "Evaluation should incorporate review comments, CI signals, commit history, and authorship changes.",
+            ),
+          ),
+
+          e(
+            Sec,
+            { title: "Contributions", accent: C.navy },
+            ...[
+              {
+                n: "C1",
+                t: "Disentangles agent failures from workflow-driven and undocumented rejections.",
+              },
+              {
+                n: "C2",
+                t: "Quantifies human involvement in merged Agentic-PRs.",
+              },
+              {
+                n: "C3",
+                t: "Shows that outcome metrics conflate capability with workflow.",
+              },
+            ].map((c) =>
+              e(
+                "div",
+                {
+                  key: c.n,
+                  style: {
+                    display: "flex",
+                    gap: 6,
+                    alignItems: "flex-start",
+                    marginBottom: 5,
+                    background: C.navyL,
+                    borderRadius: 6,
+                    padding: "6px 8px",
+                  },
+                },
+                e(
+                  "div",
+                  {
+                    style: {
+                      minWidth: 24,
+                      height: 24,
+                      borderRadius: 5,
+                      background: C.navy,
+                      color: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 9.5,
+                      fontWeight: 800,
+                      flexShrink: 0,
+                    },
+                  },
+                  c.n,
+                ),
+                e(
+                  "div",
+                  {
+                    style: {
+                      fontSize: 10.4,
+                      color: C.navy,
+                      lineHeight: 1.3,
+                      fontWeight: 700,
+                    },
+                  },
+                  c.t,
+                ),
+              ),
+            ),
+          ),
+
+          e(
+            Sec,
+            {
+              title: "Future Work",
+              accent: C.sage,
+              sub: "Use curated ground truth to scale detection of workflow-driven closures and human intervention.",
+            },
+            e(
+              "div",
+              { style: { display: "flex", gap: 4, flexWrap: "wrap" } },
+              ...[
+                "Workflow closure detection",
+                "Interaction-aware benchmarks",
+                "Scale with curated labels",
+                "Cross-repo generalization",
+              ].map((t, i) =>
+                e(
+                  "div",
+                  {
+                    key: i,
+                    style: {
+                      background: C.sageL,
+                      borderRadius: 12,
+                      padding: "4px 8px",
+                      fontSize: 9.5,
+                      fontWeight: 700,
+                      color: C.sage,
+                      border: `1px solid ${C.sage}35`,
+                    },
+                  },
+                  t,
+                ),
+              ),
+            ),
+          ),
+
+          e(
+            "div",
+            {
+              style: {
+                background: C.navy,
+                borderRadius: 8,
+                padding: "4px 10px",
+                color: "#fff",
+              },
+            },
+            e(
+              "div",
+              { style: { fontSize: 10.8, fontWeight: 700, marginBottom: 2 } },
+              "Replication Package",
+            ),
+            e(
+              "div",
+              { style: { fontSize: 10, opacity: 0.86, lineHeight: 1.35 } },
+              "github.com/cn-eveer/Agentic-PRs-Analysis",
+            ),
+            e(
+              "div",
+              { style: { fontSize: 8.4, opacity: 0.5, marginTop: 3 } },
+              `Mining Challenge· DOI: 10.1145/3793302.3793575`,
+            ),
+          ),
         ),
       ),
 
-      e("div",{style:{padding:"10px 12px 8px 8px",display:"flex",flexDirection:"column",gap:8}},
+      e(
+        "div",
+        {
+          style: {
+            background: C.wine,
+            color: "#fff",
+            padding: "5px 16px",
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: 8.8,
+          },
+        },
+        e("span", null, `Mining Challenge`),
+        e("span", null, "MSR '26 — April 13–14, 2026 — Rio de Janeiro, Brazil"),
+        e("span", null, "© 2026 Authors · CC BY-NC-ND 4.0"),
+      ),
+    );
+  }
 
-        e("div",{style:{background:`${C.amber}08`,border:`1px solid ${C.amber}30`,borderRadius:8,padding:"8px 10px"}},
-          e("div",{style:{fontSize:11.8,fontWeight:800,color:C.amber,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}},"Discussion"),
-          e("div",{style:{fontSize:10.6,color:C.navy,lineHeight:1.35}},"PR outcomes reflect both agent behavior and repository workflow. Silent closures remain a major source of uncertainty.")
-        ),
-
-      e(Sec,{title:"Cross-Agent Map",accent:C.HI,sub:"Agent differences align with repository practices such as CI gating and iterative review norms."},
-          e(CrossAgentMap)
-        ),
-
-        e("div",{style:{background:`linear-gradient(135deg,${C.wine} 0%,${C.navy} 100%)`,borderRadius:10,padding:"10px 12px",color:"#fff"}},
-          e("div",{style:{fontSize:9,fontWeight:700,textTransform:"uppercase",letterSpacing:1,opacity:0.74,marginBottom:3}},"Key Takeaway"),
-          e("div",{style:{fontSize:15,fontWeight:800,lineHeight:1.25}},"PR outcomes alone are unreliable indicators of agent performance."),
-          e("div",{style:{fontSize:11.2,opacity:0.92,lineHeight:1.35,marginTop:5}},"Evaluation should incorporate review comments, CI signals, commit history, and authorship changes.")
-        ),
-
-        e(Sec,{title:"Contributions",accent:C.navy},
-          ...[
-            {n:"C1",t:"Disentangles agent failures from workflow-driven and undocumented rejections."},
-            {n:"C2",t:"Quantifies human involvement in merged Agentic-PRs."},
-            {n:"C3",t:"Shows that outcome metrics conflate capability with workflow."},
-          ].map(c=>e("div",{key:c.n,style:{display:"flex",gap:6,alignItems:"flex-start",marginBottom:5,background:C.navyL,borderRadius:6,padding:"6px 8px"}},
-            e("div",{style:{minWidth:24,height:24,borderRadius:5,background:C.navy,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9.5,fontWeight:800,flexShrink:0}},c.n),
-            e("div",{style:{fontSize:10.4,color:C.navy,lineHeight:1.3,fontWeight:700}},c.t)
-          ))
-        ),
-
-        e(Sec,{title:"Future Work",accent:C.sage,sub:"Use curated ground truth to scale detection of workflow-driven closures and human intervention."},
-          e("div",{style:{display:"flex",gap:4,flexWrap:"wrap"}},
-            ...["Workflow closure detection","Interaction-aware benchmarks","Scale with curated labels","Cross-repo generalization"].map((t,i)=>
-              e("div",{key:i,style:{background:C.sageL,borderRadius:12,padding:"4px 8px",fontSize:9.5,fontWeight:700,color:C.sage,border:`1px solid ${C.sage}35`}},t)
-            )
-          )
-        ),
-
-        e("div",{style:{background:C.navy,borderRadius:8,padding:"4px 10px",color:"#fff"}},
-          e("div",{style:{fontSize:10.8,fontWeight:700,marginBottom:2}},"Replication Package"),
-          e("div",{style:{fontSize:10,opacity:0.86,lineHeight:1.35}},"github.com/cn-eveer/Agentic-PRs-Analysis"),
-          e("div",{style:{fontSize:8.4,opacity:0.5,marginTop:3}},`Mining Challenge· DOI: 10.1145/3793302.3793575`)
-        )
-      )
-    ),
-
-    e("div",{style:{background:C.wine,color:"#fff",padding:"5px 16px",display:"flex",justifyContent:"space-between",fontSize:8.8}},
-      e("span",null,`Mining Challenge`),
-      e("span",null,"MSR '26 — April 13–14, 2026 — Rio de Janeiro, Brazil"),
-      e("span",null,"© 2026 Authors · CC BY-NC-ND 4.0")
-    )
-  );
-}
-
-ReactDOM.render(e(CompactPoster), document.getElementById("root"));
+  ReactDOM.render(e(CompactPoster), document.getElementById("root"));
 </script>
