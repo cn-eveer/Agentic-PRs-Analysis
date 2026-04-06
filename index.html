@@ -112,8 +112,8 @@ function ExampleBox(props){
 function StatRibbon(){
   const stats=[
     {v:"11,048",l:"Closed PRs",c:C.navy},{v:"9,799",l:"Human-reviewed",c:C.sage},
-    {v:"717",l:"Manually coded",c:C.wine},{v:"35.7%",l:"Rejection = agent fail",c:C.AF},
-    {v:"15.4%",l:"Merges = human",c:C.FL}];
+    {v:"717",l:"Manually coded",c:C.wine},{v:"35.7% PRs",l:"Actual Agentic failure",c:C.AF},
+    {v:"15.4% PRs",l:"With human involvement",c:C.FL}];
   return e("div",{style:{display:"grid",gridTemplateColumns:"repeat(5,1fr)",background:C.card,borderBottom:`1px solid ${C.sandD}`}},
     ...stats.map((s,i)=>e("div",{key:i,style:{textAlign:"center",padding:"6px 3px",borderRight:i<4?`1px solid ${C.sandD}`:"none",background:`${s.c}06`}},
       e("div",{style:{fontSize:19,fontWeight:800,color:s.c,lineHeight:1}},s.v),
