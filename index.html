@@ -41,7 +41,7 @@ function Donut({data,size=120,thick=22,center,sub}){
     ...data.map((d,i)=>{const pct=d.v/tot,dash=pct*circ,off=-(cum/tot)*circ;cum+=d.v;
       return e("circle",{key:i,cx,cy,r,fill:"none",stroke:d.c,strokeWidth:thick,strokeDasharray:`${dash} ${circ-dash}`,strokeDashoffset:off,transform:`rotate(-90 ${cx} ${cy})`});}),
     e("text",{x:cx,y:cy-2,textAnchor:"middle",fontSize:size*.24,fontWeight:800,fill:C.navy,fontFamily:sf},center),
-    sub&&e("text",{x:cx,y:cy+size*.1,textAnchor:"middle",fontSize:size*.12,fill:C.slate,fontFamily:sf},sub));
+    sub&&e("text",{x:cx,y:cy+size*.1,textAnchor:"middle",fontSize:size*.10,fill:C.slate,fontFamily:sf},sub));
 }
 
 function HBar({items,total,h=12,label}){
@@ -54,10 +54,10 @@ function HBar({items,total,h=12,label}){
         return e("div",{key:i,style:{width:w+"%",background:it.c,display:"flex",alignItems:"center",justifyContent:"center",fontSize:8.5,color:"#fff",fontWeight:700}},w>15?Math.round(w)+"%":"");})));
 }
 
-function Waffle({value,total,color,size=6,cols=8}){
-  const filled=Math.round((value/total)*54);
+function Waffle({value,total,color,size=6,cols=5}){
+  const filled=Math.round((value/total)*24);
   return e("div",{style:{display:"flex",flexWrap:"wrap",width:cols*(size+10),gap:3}},
-    ...Array.from({length:54},(_,i)=>e("div",{key:i,style:{width:size,height:size,borderRadius:1.5,background:i<filled?color:"#ddd9d0"}})));
+    ...Array.from({length:24},(_,i)=>e("div",{key:i,style:{width:size,height:size,borderRadius:1.5,background:i<filled?color:"#ddd9d0"}})));
 }
 
 function Sec({title,sub,accent=C.wine,children}){
@@ -69,7 +69,7 @@ function Sec({title,sub,accent=C.wine,children}){
 
 function Leg({items}){
   return e("div",{style:{display:"flex",gap:6,flexWrap:"wrap",marginBottom:3}},
-    ...items.map(item=>e("div",{key:item.l,style:{display:"flex",alignItems:"center",gap:3,fontSize:12,fontFamily:sf}},
+    ...items.map(item=>e("div",{key:item.l,style:{display:"flex",alignItems:"center",gap:3,fontSize:10,fontFamily:sf}},
       e("div",{style:{width:9,height:9,borderRadius:2,background:item.c}}),
       e("strong",null,item.v),e("span",{style:{color:C.slate}},item.l))));
 }
@@ -92,27 +92,19 @@ function Callout({text,color}){
     e("div",{style:{fontSize:12,fontWeight:700,color,lineHeight:1.3}},text));
 }
 
-/* ─── NEW: Example boxes ─── */
-function ExampleBox(props){
-  var title=props.title, steps=props.steps, accent=props.accent;
-  var header = e("div",{style:{fontSize:8.5,fontWeight:800,color:accent,textTransform:"uppercase",letterSpacing:.3,marginBottom:2}},"\uD83D\uDD0D Example: "+title);
-  var rows = steps.map(function(s,i){
-    return e("div",{key:i,style:{display:"flex",gap:4,alignItems:"center",marginBottom:1}},
+function ExampleBox({title,steps,accent}){
+  return e("div",{style:{background:`${accent}08`,border:`1px solid ${accent}28`,borderRadius:5,padding:"4px 6px",marginTop:3}},
+    e("div",{style:{fontSize:8.5,fontWeight:800,color:accent,textTransform:"uppercase",letterSpacing:.3,marginBottom:2}},"\uD83D\uDD0D Example: "+title),
+    ...steps.map((s,i)=>e("div",{key:i,style:{display:"flex",gap:4,alignItems:"center",marginBottom:1}},
       e("span",{style:{fontSize:10,fontWeight:800,color:"#fff",background:s.c||accent,borderRadius:2,padding:"1px 3px",flexShrink:0,lineHeight:1.2}},s.tag),
       e("span",{style:{fontSize:10,fontWeight:700,color:C.navy,flexShrink:0}},s.label),
-      e("span",{style:{fontSize:9,color:C.slate}},s.text)
-    );
-  });
-  return e("div",{style:{background:accent+"08",border:"1px solid "+accent+"28",borderRadius:5,padding:"4px 6px",marginTop:3}},
-    header,
-    ...rows
-  );
+      e("span",{style:{fontSize:9,color:C.slate}},s.text))));
 }
 
 function StatRibbon(){
   const stats=[
     {v:"11,048",l:"Closed PRs",c:C.navy},{v:"9,799",l:"Human-reviewed",c:C.sage},
-    {v:"717",l:"Manually coded",c:C.wine},{v:"35.7% PRs",l:"Actual Agentic failure",c:C.AF},
+    {v:"717",l:"Manually coded",c:C.wine},{v:"35.7% PRs",l:"Actual agentic failure",c:C.AF},
     {v:"15.4% PRs",l:"With human involvement",c:C.FL}];
   return e("div",{style:{display:"grid",gridTemplateColumns:"repeat(5,1fr)",background:C.card,borderBottom:`1px solid ${C.sandD}`}},
     ...stats.map((s,i)=>e("div",{key:i,style:{textAlign:"center",padding:"6px 3px",borderRight:i<4?`1px solid ${C.sandD}`:"none",background:`${s.c}06`}},
@@ -132,17 +124,17 @@ function DatasetBars(){
 
 function PipelineGraphic(){
   const steps=[
-    {y:0,t:"AIDev dataset",s:"Closed PRs · ≥500★",c:C.sage,n:"11,048"},
-    {y:50,t:"Human review filter",s:"Remove bot-only",c:C.sage,n:"9,799"},
-    {y:100,t:"Stratified sample",s:"Balanced by agent",c:C.amber,n:"717"},
-    {y:150,t:"Manual coding",s:"2 coders · κ≈0.90",c:C.wine,n:"done"}];
+    {y:0,t:"AIDev dataset",s:"Closed PRs (Pull Requests) \u00B7 \u2265500\u2605",c:C.sage,n:"11,048"},
+    {y:50,t:"Human review filter",s:"Remove bot-only reviews",c:C.sage,n:"9,799"},
+    {y:100,t:"Stratified sample",s:"Balanced by agent tool",c:C.amber,n:"717"},
+    {y:150,t:"Manual coding",s:"2 coders \u00B7 Cohen\u2019s \u03BA\u22480.90",c:C.wine,n:"done"}];
   return e("svg",{width:"100%",viewBox:"0 0 220 205",style:{display:"block"}},
     e("defs",null,e("marker",{id:"ar",viewBox:"0 0 10 10",refX:8,refY:5,markerWidth:5,markerHeight:5,orient:"auto"},
       e("path",{d:"M2 2L8 5L2 8",fill:"none",stroke:C.slate,strokeWidth:1.3,strokeLinecap:"round",strokeLinejoin:"round"}))),
     ...steps.flatMap((s,i)=>[
       e("rect",{key:`r${i}`,x:0,y:s.y,width:182,height:36,rx:7,fill:`${s.c}12`,stroke:s.c,strokeWidth:1}),
       e("text",{key:`t${i}`,x:9,y:s.y+15,fontSize:13.5,fontWeight:700,fill:C.navy,fontFamily:sf},s.t),
-      e("text",{key:`s${i}`,x:9,y:s.y+27,fontSize:12,fill:C.slate,fontFamily:sf},s.s),
+      e("text",{key:`s${i}`,x:9,y:s.y+27,fontSize:10,fill:C.slate,fontFamily:sf},s.s),
       e("rect",{key:`b${i}`,x:188,y:s.y+4,width:32,height:28,rx:6,fill:s.c}),
       e("text",{key:`n${i}`,x:204,y:s.y+21,fontSize:8.5,fontWeight:700,fill:"#fff",textAnchor:"middle",fontFamily:sf},s.n),
       i<3?e("line",{key:`l${i}`,x1:91,y1:s.y+36,x2:91,y2:s.y+50,stroke:C.slate,strokeWidth:1.1,markerEnd:"url(#ar)"}):null
@@ -172,26 +164,26 @@ function CrossAgentMap(){
 function CompactPoster(){
   return e("div",{style:{width:"100%",aspectRatio:"84/119",background:C.sand,border:`3px solid ${C.wine}`,overflow:"hidden",display:"flex",flexDirection:"column",fontFamily:sf}},
 
-    /* ─── HEADER ─── */
+    /* HEADER */
     e("div",{style:{background:`linear-gradient(140deg,${C.wine} 0%,${C.navy} 100%)`,color:"#fff",padding:"12px 16px 9px",display:"flex",gap:10,alignItems:"center"}},
       e("div",{style:{flex:1}},
-        e("div",{style:{display:"inline-block",background:"rgba(255,255,255,0.14)",borderRadius:4,padding:"2px 8px",fontSize:9,fontWeight:700,letterSpacing:1.4,textTransform:"uppercase",marginBottom:3}},"MSR '26 · Mining Challenge"),
+        e("div",{style:{display:"inline-block",background:"rgba(255,255,255,0.14)",borderRadius:4,padding:"2px 8px",fontSize:9,fontWeight:700,letterSpacing:1.4,textTransform:"uppercase",marginBottom:3}},"MSR '26 \u00B7 Mining Challenge"),
         e("h1",{style:{fontSize:26,fontWeight:800,lineHeight:1.12,marginBottom:2}},"Why Are Agentic Pull Requests Merged or Rejected?"),
         e("div",{style:{fontSize:14.5,opacity:.88,fontStyle:"italic",marginBottom:5}},"An Empirical Study"),
-        e("div",{style:{fontSize:13,lineHeight:1.35,opacity:.82}},"S.R.O. Peralta · F. Hoshi · H. Washizaki · N. Ubayashi | Waseda · I. Kondo · Y. Higo | Osaka · H. Mukai · N. Yoshida | Ritsumeikan · K. Kusama | Kyushu · H. Tanaka · Y. Fan | NAIST")),
-              e("div",{style:{background:"rgba(255,255,255,0.12)",borderRadius:8,padding:"3px 5px",textAlign:"center"}},
-          e("img",{src:"./QR.svg",style:{width:84,height:84,background:"#fff",borderRadius:4,padding:0}}),
-          e("div",{style:{fontSize:9.5,opacity:.7}},"Scan for paper"))),
+        e("div",{style:{fontSize:13,lineHeight:1.35,opacity:.82}},"S.R.O. Peralta \u00B7 F. Hoshi \u00B7 H. Washizaki \u00B7 N. Ubayashi | Waseda \u00B7 I. Kondo \u00B7 Y. Higo | Osaka \u00B7 H. Mukai \u00B7 N. Yoshida | Ritsumeikan \u00B7 K. Kusama | Kyushu \u00B7 H. Tanaka \u00B7 Y. Fan | NAIST")),
+      e("div",{style:{background:"rgba(255,255,255,0.12)",borderRadius:8,padding:"3px 5px",textAlign:"center"}},
+        e("img",{src:"./QR.svg",style:{width:84,height:84,background:"#fff",borderRadius:4,padding:0}}),
+        e("div",{style:{fontSize:9.5,opacity:.7}},"Scan for paper"))),
 
     e(StatRibbon),
 
-    /* ─── BODY ─── */
+    /* BODY */
     e("div",{style:{flex:1,display:"grid",gridTemplateColumns:"0.88fr 1.4fr 0.88fr",minHeight:0}},
 
-      /* ═══ LEFT COLUMN ═══ */
+      /* LEFT COLUMN */
       e("div",{style:{padding:"8px 7px 6px 10px",display:"flex",flexDirection:"column",gap:6}},
 
-        e(Sec,{title:"Motivation",accent:C.navy,sub:"Agentic PR performance is often judged by merge or rejection outcomes, but those labels ignore review interactions and workflow context."},
+        e(Sec,{title:"Motivation",accent:C.navy,sub:"Agentic PR (Pull Request) performance is often judged by merge or rejection outcomes, but those labels ignore review interactions and workflow context."},
           e("div",{style:{background:`${C.wine}0a`,border:`1px solid ${C.wine}30`,borderRadius:6,padding:"5px 7px",marginBottom:4}},
             e("div",{style:{fontSize:12.2,fontWeight:700,color:C.wine,lineHeight:1.3}},"Outcomes can conflate agent behavior with repository conventions, reviewer actions, and closure practices.")),
           e(BulletPills,{items:["Merge rates miss context","Decisions live in review","Workflows shape outcomes"],color:C.navy})),
@@ -210,7 +202,7 @@ function CompactPoster(){
 
         e(Sec,{title:"Dataset",accent:C.sage,sub:"9,799 human-reviewed PRs; Codex and Devin dominate the submission pool."},
           e("div",{style:{display:"flex",gap:6,alignItems:"center",marginBottom:4}},
-            e(Waffle,{value:6179,total:9799,color:C.sage,size:8,cols:7}),
+            e(Waffle,{value:6179,total:9799,color:C.sage,size:6,cols:3}),
             e("div",null,
               e("div",{style:{display:"flex",alignItems:"center",gap:3,marginBottom:2,fontSize:12.5,fontWeight:700}},
                 e("div",{style:{width:9,height:9,borderRadius:2,background:C.sage}}),"63% Merged (6,179)"),
@@ -218,58 +210,54 @@ function CompactPoster(){
                 e("div",{style:{width:9,height:9,borderRadius:2,background:"#ddd9d0"}}),"37% Rejected (3,620)"))),
           e(DatasetBars),
           e("div",{style:{display:"flex",gap:4,marginTop:4}},
-            ...[{l:"RQ1",v:"κ≈0.90"},{l:"RQ2",v:"κ=1.00"}].map(k=>
+            ...[{l:"RQ1 (Inter-rater)",v:"Cohen\u2019s \u03BA\u22480.90"},{l:"RQ2 (Inter-rater)",v:"Cohen\u2019s \u03BA=1.00"}].map(k=>
               e("div",{key:k.l,style:{flex:1,background:C.navyL,borderRadius:5,padding:"5px 6px",textAlign:"center"}},
-                e("div",{style:{fontSize:15,fontWeight:800,color:C.navy,lineHeight:1}},k.v),
+                e("div",{style:{fontSize:13,fontWeight:800,color:C.navy,lineHeight:1.1}},k.v),
                 e("div",{style:{fontSize:8.5,color:C.slate,marginTop:1}},k.l)))))),
 
-      /* ═══ CENTER COLUMN ═══ */
+      /* CENTER COLUMN */
       e("div",{style:{padding:"8px 10px",background:C.card,borderLeft:`1px solid ${C.sandD}`,borderRight:`1px solid ${C.sandD}`,display:"flex",flexDirection:"column",gap:6}},
 
         /* RQ1 */
-        e(Sec,{title:"RQ1 — Why Are Agentic-PRs Rejected?",accent:C.AF,sub:"Only about one-third of rejected PRs reflect observable technical failures."},
+        e(Sec,{title:"RQ1 \u2014 Why Are Agentic-PRs Rejected?",accent:C.AF,sub:"Only about one-third of rejected PRs reflect observable technical failures."},
           e("div",{style:{display:"flex",gap:8,alignItems:"center",marginBottom:4}},
-            e(Donut,{size:116,thick:20,center:"353",sub:"rejected",data:[{v:126,c:C.AF},{v:110,c:C.NonAF},{v:117,c:C.Unk}]}),
+            e(Donut,{size:116,thick:20,center:"353",sub:"rejected PRs",data:[{v:126,c:C.AF},{v:110,c:C.NonAF},{v:117,c:C.Unk}]}),
             e("div",{style:{flex:1}},
-              e(Leg,{items:[{l:"Agentic failure",c:C.AF,v:"35.7%"},{l:"Non-agentic",c:C.NonAF,v:"31.2%"},{l:"Unknown",c:C.Unk,v:"33.1%"}]}),
-              e(MiniCards,{items:[{icon:"⚠",n:"126",l:"CI / test failures",c:C.AF},{icon:"↻",n:"110",l:"Workflow causes",c:C.NonAF},{icon:"?",n:"117",l:"Silent closures",c:C.Unk}]}))),
+              e(Leg,{items:[{l:"Agentic failure",c:C.AF,v:"35.7%"},{l:"Non-agentic cause",c:C.NonAF,v:"31.2%"},{l:"Unknown reason",c:C.Unk,v:"33.1%"}]}),
+              e(MiniCards,{items:[{icon:"\u26A0",n:"126",l:"CI / test failures",c:C.AF},{icon:"\u21BB",n:"110",l:"Workflow causes",c:C.NonAF},{icon:"?",n:"117",l:"Silent closures",c:C.Unk}]}))),
           e("div",{style:{fontSize:10.5,fontWeight:700,color:C.navy,marginBottom:2}},"Per-agent rejection breakdown"),
           ...rejB.map(r=>e(HBar,{key:r.a,label:r.a,total:r.t,items:[{v:r.AF,c:C.AF},{v:r.N,c:C.NonAF},{v:r.U,c:C.Unk}]})),
           e(Callout,{text:"Rejections overstate agent error: Devin rejections were often workflow-driven, while Codex had the highest share of genuine agentic failure.",color:C.AF}),
-
-          /* ─── RQ1 EXAMPLE ─── */
           e(ExampleBox,{title:"Agentic Failure",accent:C.AF,steps:[
             {tag:"PR",c:C.codex,label:"Codex opens PR #4821",text:"feat: add retry logic to API client"},
-            {tag:"CI",c:"#c0392b",label:"CI pipeline fails",text:"✗ 3 test failures: timeout not handled in edge cases"},
-            {tag:"Rev",c:C.slate,label:"Reviewer comments",text:"\"Tests are failing — retry doesn't back off on 429s\""},
-            {tag:"✗",c:"#c0392b",label:"Closed without fix",text:"Agent did not respond → PR closed after 7 days"}
+            {tag:"CI",c:"#c0392b",label:"CI (Continuous Integration) fails",text:"\u2717 3 test failures: timeout not handled in edge cases"},
+            {tag:"Rev",c:C.slate,label:"Reviewer comments",text:"\"Tests are failing \u2014 retry doesn't back off on 429s\""},
+            {tag:"\u2717",c:"#c0392b",label:"Closed without fix",text:"Agent did not respond \u2192 PR closed after 7 days"}
           ]})),
 
         /* RQ2 */
-        e(Sec,{title:"RQ2: How Do Humans Shape Successful PRs?",accent:C.FL,sub:"Most merged PRs are autonomous; only 15.4% show clear human involvement."},
+        e(Sec,{title:"RQ2 \u2014 How Do Humans Shape Successful PRs?",accent:C.FL,sub:"Most merged PRs are autonomous; only 15.4% show clear human involvement."},
           e("div",{style:{display:"flex",gap:8,alignItems:"center",marginBottom:4}},
-            e(Donut,{size:116,thick:20,center:"364",sub:"merged",data:[{v:28,c:C.FL},{v:28,c:C.HI},{v:288,c:C.NoFL},{v:20,c:C.UnkM}]}),
+            e(Donut,{size:116,thick:20,center:"364",sub:"merged PRs",data:[{v:28,c:C.FL},{v:28,c:C.HI},{v:288,c:C.NoFL},{v:20,c:C.UnkM}]}),
             e("div",{style:{flex:1}},
-              e(Leg,{items:[{l:"Feedback loop",c:C.FL,v:"7.7%"},{l:"Human commits",c:C.HI,v:"7.7%"},{l:"No feedback",c:C.NoFL,v:"79.1%"},{l:"Unknown",c:C.UnkM,v:"5.5%"}]}),
-              e(MiniCards,{items:[{icon:"💬",n:"28",l:"Reviewer→agent revises",c:C.FL},{icon:"✏️",n:"28",l:"Reviewer commits",c:C.HI},{icon:"✓",n:"288",l:"Merged autonomously",c:C.NoFL}]}))),
+              e(Leg,{items:[{l:"Feedback loop",c:C.FL,v:"7.7%"},{l:"Human commits",c:C.HI,v:"7.7%"},{l:"No feedback loop",c:C.NoFL,v:"79.1%"},{l:"Unknown",c:C.UnkM,v:"5.5%"}]}),
+              e(MiniCards,{items:[{icon:"\uD83D\uDCAC",n:"28",l:"Reviewer\u2192agent revises",c:C.FL},{icon:"\u270F\uFE0F",n:"28",l:"Reviewer commits",c:C.HI},{icon:"\u2713",n:"288",l:"Merged autonomously",c:C.NoFL}]}))),
           e("div",{style:{fontSize:10.5,fontWeight:700,color:C.navy,marginBottom:2}},"Per-agent merge interaction"),
           ...merB.map(r=>e(HBar,{key:r.a,label:r.a,total:r.t,items:[{v:r.FL,c:C.FL},{v:r.HI,c:C.HI},{v:r.NF,c:C.NoFL},{v:r.U,c:C.UnkM}]})),
           e(Callout,{text:"Copilot and Devin account for nearly all human-involved merges. Codex and Cursor merge mostly without iterative review.",color:C.FL}),
-
-          /* ─── RQ2 EXAMPLE ─── */
           e(ExampleBox,{title:"Human-Involved Merge",accent:C.FL,steps:[
             {tag:"PR",c:C.devin,label:"Devin opens PR #1037",text:"fix: resolve race condition in job scheduler"},
-            {tag:"Rev",c:C.FL,label:"Reviewer requests changes",text:"\"Mutex scope is too broad — wrap only the critical section\""},
+            {tag:"Rev",c:C.FL,label:"Reviewer requests changes",text:"\"Mutex scope is too broad \u2014 wrap only the critical section\""},
             {tag:"Fix",c:C.devin,label:"Agent pushes revision",text:"Narrowed lock to scheduler.enqueue() block only"},
-            {tag:"✓",c:C.NoFL,label:"Reviewer approves & merges",text:"\"Looks good — much cleaner. Merging.\""}
+            {tag:"\u2713",c:C.NoFL,label:"Reviewer approves & merges",text:"\"Looks good \u2014 much cleaner. Merging.\""}
           ]}))),
 
-      /* ═══ RIGHT COLUMN ═══ */
+      /* RIGHT COLUMN */
       e("div",{style:{padding:"8px 10px 6px 7px",display:"flex",flexDirection:"column",gap:8}},
 
         e("div",{style:{background:`${C.amber}08`,border:`1px solid ${C.amber}30`,borderRadius:7,padding:"7px 9px"}},
           e("div",{style:{fontSize:14,fontWeight:800,color:C.amber,textTransform:"uppercase",letterSpacing:.5,marginBottom:2}},"Discussion"),
-          e("div",{style:{fontSize:12,color:C.navy,lineHeight:1.35}},"PR outcomes reflect both agent behavior and repository workflow. Silent closures remain a major source of uncertainty.")),
+          e("div",{style:{fontSize:12,color:C.navy,lineHeight:1.35}},"PR outcomes reflect both agent behavior and repository workflow. Silent closures (PRs closed without any reviewer comment) remain a major source of uncertainty.")),
 
         e(Sec,{title:"Cross-Agent Map",accent:C.HI,sub:"Agent differences align with repository practices such as CI gating and iterative review norms."},
           e(CrossAgentMap)),
@@ -281,7 +269,7 @@ function CompactPoster(){
 
         e(Sec,{title:"Contributions",accent:C.navy},
           ...[{n:"C1",t:"Disentangles agent failures from workflow-driven and undocumented rejections."},
-              {n:"C2",t:"Quantifies human involvement in merged Agentic-PRs."},
+              {n:"C2",t:"Quantifies human involvement in merged agentic PRs."},
               {n:"C3",t:"Shows that outcome metrics conflate capability with workflow."}
           ].map(c=>e("div",{key:c.n,style:{display:"flex",gap:5,alignItems:"flex-start",marginBottom:4,background:C.navyL,borderRadius:5,padding:"5px 7px"}},
             e("div",{style:{minWidth:22,height:22,borderRadius:4,background:C.navy,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:9,fontWeight:800,flexShrink:0}},c.n),
@@ -295,17 +283,17 @@ function CompactPoster(){
         e("div",{style:{background:C.navy,borderRadius:7,padding:"4px 9px",color:"#fff"}},
           e("div",{style:{fontSize:10.2,fontWeight:700,marginBottom:1}},"Replication Package"),
           e("div",{style:{fontSize:9.5,opacity:.86,lineHeight:1.35}},"github.com/cn-eveer/Agentic-PRs-Analysis"),
-          e("div",{style:{fontSize:8,opacity:.5,marginTop:2}},"Mining Challenge · DOI: 10.1145/3793302.3793575")),
-        /* ─── CONTACT ─── */
+          e("div",{style:{fontSize:8,opacity:.5,marginTop:2}},"Mining Challenge \u00B7 DOI: 10.1145/3793302.3793575")),
+
         e("div",{style:{fontSize:12,color:C.slate,marginTop:2,display:"flex",alignItems:"center",gap:4}},
-          e("span",{style:{fontWeight:700,color:C.navy}},"✉ Sien"),
-          e("span",null,"sienreeve46@toki.waseda.jp"))),
-    ),
-    /* ─── FOOTER ─── */
+          e("span",{style:{fontWeight:700,color:C.navy}},"\u2709 Sien"),
+          e("span",null,"sienreeve46@toki.waseda.jp")))),
+
+    /* FOOTER */
     e("div",{style:{background:C.wine,color:"#fff",padding:"4px 16px",display:"flex",justifyContent:"space-between",alignItems:"center",fontSize:8.5}},
       e("span",null,"Mining Challenge"),
-      e("span",null,"MSR '26 — April 13–14, 2026 — Rio de Janeiro, Brazil"),
-      e("span",null,"© 2026 Authors · CC BY-NC-ND 4.0")));
+      e("span",null,"MSR '26 \u2014 April 13\u201314, 2026 \u2014 Rio de Janeiro, Brazil"),
+      e("span",null,"\u00A9 2026 Authors \u00B7 CC BY-NC-ND 4.0")));
 }
 
 ReactDOM.render(e(CompactPoster),document.getElementById("root"));
